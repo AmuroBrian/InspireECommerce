@@ -79,7 +79,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-black">
+    <div className="relative w-full h-screen flex items-center justify-center bg-black z-0">
       {isMobile ? (
         // Mobile view with typewriter effect
         <h1 className="text-white text-4xl font-bold">
