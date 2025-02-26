@@ -41,7 +41,7 @@ const Products2 = ({ products = [] }) => {
   return (
     <div className=" flex flex-col items-center justify-center  bg-gray-300">
       {/* Animated JTECH Text */}
-      <div className="overlay"></div>
+      
       <div className="text flex text-6xl font-bold relative z-10">
         {"JTECH".split("").map((char, index) => (
           <div key={index} className="wrapper px-2 pt-5">
