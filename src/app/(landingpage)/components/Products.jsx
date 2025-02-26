@@ -58,7 +58,7 @@ const Products = ({ products = [] }) => {
           text-shadow: 5px 5px 0px #74abdb,
             
            
-            20px 20px 5px #74abdb;
+        
           cursor: pointer;
         }
         .animated-title:hover {
@@ -88,7 +88,7 @@ const Products = ({ products = [] }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <div className="border rounded-lg p-4 shadow-lg bg-[#74abdb]">
+            <div className="border rounded-lg p-4 shadow-lg bg-white">
               <img
                 src={product.image}
                 alt={product.name}

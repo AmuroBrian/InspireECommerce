@@ -39,7 +39,7 @@ const Products2 = ({ products = [] }) => {
   }, []);
 
   return (
-    <div className=" flex flex-col items-center justify-center  bg-gray-300">
+    <div className=" flex flex-col items-center justify-center  bg-white-300">
       {/* Animated JTECH Text */}
       
       <div className="text flex text-6xl font-bold relative z-10">
@@ -63,7 +63,7 @@ const Products2 = ({ products = [] }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="border rounded-lg p-4 shadow-lg bg-[#74abdb]">
+              <div className="border rounded-lg p-4 shadow-lg bg-white">
                 <img
                   src={product.image}
                   alt={product.name}
