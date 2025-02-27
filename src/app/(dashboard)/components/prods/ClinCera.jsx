@@ -1,30 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 
-const Checkout = () => {
-  const searchParams = useSearchParams();
-  const [product, setProduct] = useState(null);
+const product = {
+  id: 13,
+  name: "Clinience Ceramide",
+  image: "./images/b2.jpg",
+  description:
+    "Clinience is a supplement brand that utilizes advanced liposome technology, developed in collaboration with Japanese medical and research institutions, to ensure high precision and superior quality.",
+  info: "For Vitamin C, take 1 to 3 tablets per day. For 5-ALA, take 4 to 8 sticks per day with water or lukewarm water.",
+  use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
+  price: 3499,
+};
+
+const ClinCera = () => {
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    const productData = searchParams.get("product");
-    if (productData) {
-      setProduct(JSON.parse(decodeURIComponent(productData)));
-    }
-  }, [searchParams]);
-
-  if (!product) {
-    return <div className="text-center mt-10 text-red-500">Product not found!</div>;
-  }
 
   const handleQuantityChange = (amount) => {
     setQuantity((prev) => Math.max(1, prev + amount));
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto">
+    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto border rounded-lg shadow-lg">
       {/* Image on the left */}
       <div className="w-full md:w-1/2">
         <img src={product.image} alt={product.name} className="w-full rounded-lg shadow-md" />
@@ -35,7 +32,8 @@ const Checkout = () => {
         <h2 className="text-2xl font-bold">{product.name}</h2>
         <p className="text-gray-700 mt-2">{product.description}</p>
         <p className="text-sm text-gray-600 mt-2">{product.info}</p>
-        <p className="text-lg font-semibold mt-4">${product.price}</p>
+        <p className="text-sm text-gray-600 mt-2 italic">{product.use}</p>
+        <p className="text-lg font-semibold mt-4">PHP {product.price}</p>
 
         {/* Quantity Selector */}
         <div className="flex items-center mt-4">
@@ -58,4 +56,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default ClinCera;
