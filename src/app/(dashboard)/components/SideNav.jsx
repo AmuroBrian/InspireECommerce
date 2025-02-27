@@ -53,7 +53,7 @@ export default function SidebarNavigation() {
   ];
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen overflow-hidden z-10">
       <nav className="bg-sky-700 p-4 shadow-md w-full fixed top-0 z-50 h-16">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">

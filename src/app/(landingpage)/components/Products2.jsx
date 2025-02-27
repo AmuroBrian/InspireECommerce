@@ -84,7 +84,7 @@ const Products = ({ products = [] }) => {
         animate={controls}
       ></motion.div>
 
-      <div className="flex justify-center items-center mb-8  text-6xl font-bold  z-10 ">
+      <div className=" flex tems-center text  justify-center items-center text-6xl font-bold relative z-10">
         {"JTECH".split("").map((char, index) => (
           <div key={index} className="wrapper px-2 pt-5">
             <div className="letter transition ease-out duration-1000 text-gray-400">{char}</div>
@@ -103,7 +103,7 @@ const Products = ({ products = [] }) => {
             animate={carouselControls}
             custom={index} // Custom index for staggered animation
           >
-            <div className="border rounded-lg p-4 shadow-lg bg-white">
+            <div className="border rounded-lg p-4 shadow-lg bg-white mb-9">
               <img
                 src={product.image}
                 alt={product.name}
