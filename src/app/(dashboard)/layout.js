@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }) {
         <SideNav />
 
         {/* Main content area */}
-        <main className="flex-1 flex items-center justify-center bg-white text-white p-6">
+        <main className="flex-1 flex items-center justify-center bg-white text-black">
           {children}
         </main>
       </body>

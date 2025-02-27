@@ -59,7 +59,7 @@ export default function SidebarNavigation() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="text-2xl bg-sky-700 p-2 rounded-md shadow-md"
+              className="text-2xl bg-sky-700 p-2 rounded-md shadow-md text-white"
             >
               {isSidebarOpen ? <X /> : <Menu />}
             </button>
@@ -77,7 +77,7 @@ export default function SidebarNavigation() {
             <span className="text-black dark:text-white">{`${getGreeting()}, ${userName}`}</span>
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="text-xl bg-sky-700 p-2 rounded-md shadow-md"
+              className="text-xl bg-sky-700 p-2 rounded-md shadow-md text-white"
             >
               <User />
             </button>
