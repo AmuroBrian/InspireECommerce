@@ -27,7 +27,6 @@ export default function IBeauty() {
     </div>
   ))}
 </div>
-
     </div>
   );
 }
