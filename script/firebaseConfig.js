@@ -1,16 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyD62vnksliMH1RsDnxiyZc3NN8RWh1S1FA",
     authDomain: "ecommerce-ee900.firebaseapp.com",
     projectId: "ecommerce-ee900",
-    storageBucket: "ecommerce-ee900.firebasestorage.app",
+    storageBucket: "ecommerce-ee900.appspot.com", // Fixed storageBucket URL
     messagingSenderId: "983245224301",
     appId: "1:983245224301:web:9b3891dbd482ae230b4264",
     measurementId: "G-GLFKN96SSB"
@@ -18,4 +16,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app); // Initialize Firebase Authentication
+
+export { app, auth };
