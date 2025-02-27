@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { use } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "./ui/Card";
+import { Card, CardContent } from "../components/ui/Card";
+import { useRouter } from "next/navigation";
+
 
 const products = [
   {
@@ -11,7 +13,9 @@ const products = [
     image: "./images/b2.jpg",
     description: "An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has deep cleansing formula.",
     info: "You Be You contains natural ingredients that makes it excellent for daily use. It has two variations which are for Daily Morning Mask and for Daily Night Mask to help achieve the effect. You Be You offers two types of packages, one contains 7 mask sheets, the other contains 30 mask sheets.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 210,
+    
   },
 
   {
@@ -20,6 +24,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has deep cleansing formula.",
     info: "You Be You contains natural ingredients that makes it excellent for daily use. It has two variations which are for Daily Morning Mask and for Daily Night Mask to help achieve the effect. You Be You offers two types of packages, one contains 7 mask sheets, the other contains 30 mask sheets.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 730,
   },
 
@@ -29,6 +34,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has deep cleansing formula.",
     info: "You Be You contains natural ingredients that makes it excellent for daily use. It has two variations which are for Daily Morning Mask and for Daily Night Mask to help achieve the effect. You Be You offers two types of packages, one contains 7 mask sheets, the other contains 30 mask sheets.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 210,
   },
   
@@ -38,6 +44,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has deep cleansing formula.",
     info: "You Be You contains natural ingredients that makes it excellent for daily use. It has two variations which are for Daily Morning Mask and for Daily Night Mask to help achieve the effect. You Be You offers two types of packages, one contains 7 mask sheets, the other contains 30 mask sheets.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 730,
   },
 
@@ -47,6 +54,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "An extra-ordinary facial mask that provides essential moisture,protects skin from external stimuli,and has deep cleansing formula.",
     info: "You Be You contains natural ingredients that makes it excellent for daily use.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 730,
   },
 
@@ -56,6 +64,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "\"A red beyond red\" that will allowyou to discover a new you thatgoes beyond your current self.",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 635,
   },
   {
@@ -64,6 +73,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "deep pink that exudes\"dignified confidence\" and isloved throughout the ages.",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 635,
   },
   {
@@ -72,6 +82,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "A coral that has the juiciness ofearly summer, yetstill shines brightly in reality.",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 635,
   },
   {
@@ -80,6 +91,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Captivating nude colors foran \"irresistible charm\".",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 635,
   },
 
@@ -89,6 +101,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "A pink that is both sweet andmature, and is loved by allwomen.",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 799,
   },
   {
@@ -97,6 +110,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Unlock radiant, hydrated skin with the perfect blend of Emulsion Cream and Aqua Serum.",
     info: "A true moisturizing lip serumthat perfects your natural lips.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 1299,
   },
   {
@@ -105,6 +119,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Unlock radiant, hydrated skin with the perfect blend of Emulsion Cream and Aqua Serum.",
     info: "This moment signifies the introduction of the world's first and only cosmetics line uniquely formulated with two exceptionally rare and valuable ingredients, setting a new standard in beauty and skincare innovation.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 1699,
   },
   {
@@ -113,6 +128,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Clinience is a supplementbrand that utilizes advancedliposome technology,developed in collaborationwith Japanese medical andresearch institutions, toensure high precision andsuperior quality.",
     info: "For Vitamin C, take 1 to 3 tablets per day.For 5-ALA, take 4 to 8 sticks per day withwith water or lukewarm water.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 3499,
   },
   {
@@ -121,6 +137,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Clinience is a supplementbrand that utilizes advancedliposome technology,developed in collaborationwith Japanese medical andresearch institutions, toensure high precision andsuperior quality.",
     info: "For Vitamin C, take 1 to 3 tablets per day.For 5-ALA, take 4 to 8 sticks per day withwith water or lukewarm water.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 11499,
   },
   {
@@ -129,6 +146,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Clinience is a supplementbrand that utilizes advancedliposome technology,developed in collaborationwith Japanese medical andresearch institutions, toensure high precision andsuperior quality.",
     info: "For Vitamin C, take 1 to 3 tablets per day.For 5-ALA, take 4 to 8 sticks per day withwith water or lukewarm water.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 11499,
   },
   {
@@ -137,6 +155,7 @@ const products = [
     image: "./images/b2.jpg",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 7600,
   },
   {
@@ -145,13 +164,64 @@ const products = [
     image: "./images/b2.jpg",
     description: "loremsimply dummy text of the printing and typesetting industry.",
     info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
     price: 7125,
+  },
+
+  {
+    id: 18,
+    name: "FOM Pack",
+    image: "./images/b2.jpg",
+    description: "loremsimply dummy text of the printing and typesetting industry.",
+    info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
+    price: 2800,
+  },
+
+  {
+    id: 19,
+    name: "YBY Cleansing Gel*",
+    image: "./images/b2.jpg",
+    description: "loremsimply dummy text of the printing and typesetting industry.",
+    info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
+    price: 700,
+  },
+
+  {
+    id: 20,
+    name: "Aplha-HT",
+    image: "./images/b2.jpg",
+    description: "Alpha-HT is committed to transforming the way we power our world. By integrating a-HT technology, our air coolers provide a sustainable, cost-effective solution for a more comfortable and ecofriendly future, while reducing your energy consumption.",
+    info: "By installing this device in the copper (UID) pipe of the ventilation system, power consumption can be reduced by 15% to 35%. Should be installed in the liquid pipeline between the condensation unit and the expansion valve.",
+    use: "To be discussed with a representative of Inspire Next Global Inc.",
+    //price: 700,
+  },
+
+  {
+    id: 21,
+    name: "Desknet's NEO",
+    image: "./images/b2.jpg",
+    description: "Desknet's NEO is a cloud-based groupware popular in Japan, offering businesses a customizable platform for collaboration, communication, and workflow management.",
+    info: "Offers features such as file sharing, virtual meetings, task management, approval processes, calendar integration, and internal communication.",
+    use: "To be discussed with a representative of Inspire Next Global Inc.",
+    //price: 700,
+  },
+
+  {
+    id: 22,
+    name: "SQRC® (Security QR Code)",
+    image: "./images/b2.jpg",
+    description: "A single QR Code can store both public and private data, with the private data accessible only through a specialized reader equipped with a cryptographic key, ensuring secure data protection. Since SQRC visually resembles a standard QR Code, it helps prevent forgery and tampering.",
+    info: "A single code carries two types of data: public and private. Public data is accessible to anyone with a standard QR Code reader, while private data is encrypted and can only be accessed by a specialized reader equipped with a cryptographic key.",
+    use: "To be discussed with a representative of Inspire Next Global Inc.",
+    //price: 700,
   },
 
 
 ];
 
-const AnimatedCard = ({ name, image, description }) => {
+const AnimatedCard = ({ name, image, description, info, price, use }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -166,6 +236,7 @@ const AnimatedCard = ({ name, image, description }) => {
           <p className="text-md font-bold text-gray-600 mt-2">{price}</p>
           <p className="text-sm text-gray-600 mt-2">{description}</p>
           <p className="text-sm text-gray-600 mt-2">{info}</p>
+          <p className="text-sm text-gray-600 mt-2">{use}</p>
         </CardContent>
       </Card>
     </motion.div>
