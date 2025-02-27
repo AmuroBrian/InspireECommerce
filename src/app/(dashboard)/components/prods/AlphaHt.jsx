@@ -1,30 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 
-const Checkout = () => {
-  const searchParams = useSearchParams();
-  const [product, setProduct] = useState(null);
+const product = {
+  id: 20,
+  name: "Alpha-HT",
+  image: "./images/b2.jpg",
+  description:
+    "Alpha-HT is committed to transforming the way we power our world. By integrating a-HT technology, our air coolers provide a sustainable, cost-effective solution for a more comfortable and eco-friendly future, while reducing your energy consumption.",
+  info: "By installing this device in the copper (UID) pipe of the ventilation system, power consumption can be reduced by 15% to 35%. Should be installed in the liquid pipeline between the condensation unit and the expansion valve.",
+  use: "To be discussed with a representative of Inspire Next Global Inc.",
+  // price: 700, (Price is commented out; remove comment if needed)
+};
+
+const AlphaHt = () => {
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    const productData = searchParams.get("product");
-    if (productData) {
-      setProduct(JSON.parse(decodeURIComponent(productData)));
-    }
-  }, [searchParams]);
-
-  if (!product) {
-    return <div className="text-center mt-10 text-red-500">Product not found!</div>;
-  }
 
   const handleQuantityChange = (amount) => {
     setQuantity((prev) => Math.max(1, prev + amount));
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto">
+    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto border rounded-lg shadow-lg">
       {/* Image on the left */}
       <div className="w-full md:w-1/2">
         <img src={product.image} alt={product.name} className="w-full rounded-lg shadow-md" />
@@ -35,7 +32,10 @@ const Checkout = () => {
         <h2 className="text-2xl font-bold">{product.name}</h2>
         <p className="text-gray-700 mt-2">{product.description}</p>
         <p className="text-sm text-gray-600 mt-2">{product.info}</p>
-        <p className="text-lg font-semibold mt-4">${product.price}</p>
+        <p className="text-sm text-gray-600 mt-2 italic">{product.use}</p>
+
+        {/* Price Section (only show if price exists) */}
+        {product.price && <p className="text-lg font-semibold mt-4">PHP {product.price}</p>}
 
         {/* Quantity Selector */}
         <div className="flex items-center mt-4">
@@ -58,4 +58,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default AlphaHt;

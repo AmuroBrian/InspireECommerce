@@ -1,30 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 
-const Checkout = () => {
-  const searchParams = useSearchParams();
-  const [product, setProduct] = useState(null);
+const product = {
+  id: 3,
+  name: "YBY Night Mask (7pcs)",
+  image: "./images/b2.jpg",
+  description:
+    "An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has a deep cleansing formula.",
+  info: "You Be You contains natural ingredients that make it excellent for daily use. It has two variations: Daily Morning Mask and Daily Night Mask to help achieve the effect. You Be You offers two types of packages: one contains 7 mask sheets, the other contains 30 mask sheets.",
+  use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
+  price: 210,
+};
+
+const YBYNightMask7 = () => {
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    const productData = searchParams.get("product");
-    if (productData) {
-      setProduct(JSON.parse(decodeURIComponent(productData)));
-    }
-  }, [searchParams]);
-
-  if (!product) {
-    return <div className="text-center mt-10 text-red-500">Product not found!</div>;
-  }
 
   const handleQuantityChange = (amount) => {
     setQuantity((prev) => Math.max(1, prev + amount));
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto">
+    <div className="flex flex-col md:flex-row items-start p-8 max-w-4xl mx-auto border rounded-lg shadow-lg">
       {/* Image on the left */}
       <div className="w-full md:w-1/2">
         <img src={product.image} alt={product.name} className="w-full rounded-lg shadow-md" />
@@ -35,7 +32,8 @@ const Checkout = () => {
         <h2 className="text-2xl font-bold">{product.name}</h2>
         <p className="text-gray-700 mt-2">{product.description}</p>
         <p className="text-sm text-gray-600 mt-2">{product.info}</p>
-        <p className="text-lg font-semibold mt-4">${product.price}</p>
+        <p className="text-sm text-gray-600 mt-2 italic">{product.use}</p>
+        <p className="text-lg font-semibold mt-4">PHP {product.price}</p>
 
         {/* Quantity Selector */}
         <div className="flex items-center mt-4">
@@ -58,4 +56,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default YBYNightMask7;
