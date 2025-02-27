@@ -1,3 +1,5 @@
+import IBeauty from '@/app/(dashboard)/ibeauty/page';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -11,6 +13,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customBlue: '#74abdb',
+        iBeauty: '#eeeadd',
       },
     },
   },

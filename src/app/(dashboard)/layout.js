@@ -9,11 +9,12 @@ export default function DashboardLayout({ children }) {
         {/* Sidebar on the left */}
         <SideNav />
 
-        {/* Main content area */}
-        <main className="flex-1 flex items-center justify-center bg-white text-white p-6">
+        {/* Main content area with no fixed background */}
+        <main className="flex-1 flex items-center justify-center bg-white text-black">
           {children}
         </main>
       </body>
     </html>
   );
 }
+
