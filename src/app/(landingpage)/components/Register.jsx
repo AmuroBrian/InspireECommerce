@@ -50,6 +50,12 @@ export default function RegisterModal({ onClose }) {
         uid: user.uid,
       });
 
+      // Initialize an empty transaction history subcollection
+      await setDoc(doc(db, "users", user.uid, "transactionhistory", "init"), {
+        message: "Transaction history initialized",
+        timestamp: new Date(),
+      });
+
       setSuccess("Registration successful! Redirecting...");
       setTimeout(() => {
         onClose(); // Close modal after success
