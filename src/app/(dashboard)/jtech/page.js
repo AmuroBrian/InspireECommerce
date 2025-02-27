@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const page = () => {
+export default function JTech() {
   return (
-    <div>page</div>
+    <div className='text-red-500 flex flex-col w-full h-full justify-center items-center text-center'>
+      JTech PAGE
+    </div>
   )
 }
