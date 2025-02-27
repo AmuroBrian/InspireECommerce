@@ -8,7 +8,8 @@ import { useRouter } from "next/navigation";
 
 export default function RegisterModal({ onClose }) {
   const [formData, setFormData] = useState({
-    name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     contact: "",
     address: "",
@@ -41,7 +42,8 @@ export default function RegisterModal({ onClose }) {
 
       // Save additional user data to Firestore
       await setDoc(doc(db, "users", user.uid), {
-        name: formData.name,
+        firstname: formData.firstname,
+        lastname: formData.lastname,
         email: formData.email,
         contact: formData.contact,
         address: formData.address,
@@ -92,9 +94,18 @@ export default function RegisterModal({ onClose }) {
 
           <input
             type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
+            name="firstname"
+            placeholder="First Name"
+            value={formData.firstname}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Last Name"
+            value={formData.lastname}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded"
             required

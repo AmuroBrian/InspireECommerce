@@ -1,16 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, User } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app } from "./../../../../script/firebaseConfig"; // Ensure correct Firebase config import
 
 export default function SidebarNavigation() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const userName = "User"; // Replace with Firebase fetched user
+  const [userName, setUserName] = useState("User");
   const router = useRouter();
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          const userRef = doc(db, "users", user.uid);
+          const userSnap = await getDoc(userRef);
+          if (userSnap.exists()) {
+            setUserName(userSnap.data().firstname);
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth, db]);
+
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good Morning";
+    if (hour < 18) return "Good Afternoon";
+    return "Good Evening";
+  };
 
   const categories = [
     { name: "Dashboard", path: "/main" },
@@ -25,10 +54,8 @@ export default function SidebarNavigation() {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Navigation Bar */}
       <nav className="bg-sky-700 p-4 shadow-md w-full fixed top-0 z-50 h-16">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Hamburger + Logo */}
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -46,9 +73,8 @@ export default function SidebarNavigation() {
             </div>
           </div>
 
-          {/* User Profile */}
           <div className="relative flex items-center gap-3">
-            <span className="text-black dark:text-white">Hi, {userName}</span>
+            <span className="text-black dark:text-white">{`${getGreeting()}, ${userName}`}</span>
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
               className="text-xl bg-sky-700 p-2 rounded-md shadow-md"
@@ -66,7 +92,6 @@ export default function SidebarNavigation() {
         </div>
       </nav>
 
-      {/* Sidebar */}
       <motion.aside
         initial={{ x: -250 }}
         animate={{ x: isSidebarOpen ? 0 : -250 }}
