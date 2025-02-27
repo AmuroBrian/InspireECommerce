@@ -1,3 +1,5 @@
+import IBeauty from '@/app/(dashboard)/ibeauty/page';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
