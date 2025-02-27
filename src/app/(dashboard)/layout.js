@@ -8,8 +8,6 @@ export default function DashboardLayout({ children }) {
       <body className="w-full h-screen flex">
         {/* Sidebar on the left */}
         <SideNav />
-
-        {/* Main content area */}
         <main className="flex-1 flex items-center justify-center bg-white text-black">
           {children}
         </main>
@@ -17,3 +15,4 @@ export default function DashboardLayout({ children }) {
     </html>
   );
 }
+
