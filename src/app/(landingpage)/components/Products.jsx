@@ -5,11 +5,21 @@ import { motion, useAnimation } from "framer-motion";
 
 const Products = ({ products = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const itemsPerSlide = 4;
   const controls = useAnimation();
   const carouselControls = useAnimation();
 
-  // Function to loop products for infinite scrolling
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   const getLoopedProducts = () => {
     if (products.length <= itemsPerSlide) return products;
     return [...products, ...products.slice(0, itemsPerSlide)];
@@ -27,40 +37,34 @@ const Products = ({ products = [] }) => {
     );
   };
 
-  // Scroll-triggered animations for the blue line & carousel
   useEffect(() => {
     const handleScroll = () => {
-      const triggerHeight = window.innerHeight / 1.5; // Adjust trigger point
+      const triggerHeight = window.innerHeight / 1.5;
       const blueLine = document.querySelector(".blue-line");
-      const carousel = document.querySelector(".carousel-container");
+      const items = document.querySelectorAll(".product-item");
 
       if (blueLine) {
         const rect = blueLine.getBoundingClientRect();
-        if (rect.top < triggerHeight) {
-          controls.start({ x: 0, transition: { duration: 0.8, ease: "easeOut" } });
-        } else {
-          controls.start({ x: "100%", transition: { duration: 0.8, ease: "easeIn" } });
-        }
+        controls.start({ x: rect.top < triggerHeight ? 0 : "100%", transition: { duration: 0.8 } });
       }
 
-      if (carousel) {
-        const rect = carousel.getBoundingClientRect();
+      items.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
         if (rect.top < triggerHeight) {
-          carouselControls.start((i) => ({
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, delay: i * 0.2, ease: "easeOut" },
-          }));
+          carouselControls.start((i) =>
+            i === index
+              ? { x: 0, opacity: 1, transition: { duration: 0.5, delay: i * 0.2 } }
+              : {}
+          );
         } else {
-          carouselControls.start((i) => ({
-            opacity: 0,
-            y: 50,
-            transition: { duration: 0.5, delay: i * 0.1, ease: "easeIn" },
-          }));
+          carouselControls.start((i) =>
+            i === index
+              ? { x: 100, opacity: 0, transition: { duration: 0.5, delay: i * 0.2 } }
+              : {}
+          );
         }
-      }
+      });
     };
-
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -68,79 +72,63 @@ const Products = ({ products = [] }) => {
 
   return (
     <div className="relative w-full mx-auto bg-white p-6">
-      <style>{`
-        @font-face {
-          src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
-          font-family: "Meta";
-          font-style: normal;
-          font-weight: normal;
-        }
-        .animated-title {
-          transition: all 0.5s;
-          -webkit-text-stroke: 2px #000000;
-          font-variation-settings: "wght" 900, "ital" 1;
-          font-size: 4rem;
-          text-align: center;
-          color: transparent;
-          font-family: "Meta", sans-serif;
-          text-shadow: 5px 5px 0px #74abdb;
-          cursor: pointer;
-        }
-        .animated-title:hover {
-          font-variation-settings: "wght" 100, "ital" 0;
-          text-shadow: none;
-        }
-      `}</style>
-
-      {/* Blue Line with Scroll Animation */}
-      <motion.div
-        className="blue-line h-1 bg-[#74abdb] w-full"
-        initial={{ x: "100%" }}
-        animate={controls}
-      ></motion.div>
-
+      <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
       <div className="flex justify-center items-center mb-8">
         <span className="text-5xl font-extrabold text-black">꧁</span>
-        <h1 className="animated-title mx-4">IBeauty</h1>
+        <h1 className="text-4xl font-extrabold text-black mx-4">IBeauty</h1>
         <span className="text-5xl font-extrabold text-black">꧂</span>
       </div>
-
-      {/* Product Carousel with Scroll Animation */}
-      <div className="flex overflow-hidden carousel-container">
-        {loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
-          <motion.div
-            key={index}
-            className="w-1/4 p-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={carouselControls}
-            custom={index} // Custom index for staggered animation
-          >
-            <div className="border rounded-lg p-4 shadow-lg bg-white">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-cover rounded-md"
-              />
-              <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-              <p className="text-black font-medium">{product.price}</p>
-            </div>
-          </motion.div>
-        ))}
+      <div className={`flex ${isSmallScreen ? "flex-col" : "overflow-hidden"} carousel-container`}>
+        {isSmallScreen
+          ? products.map((product, index) => (
+              <motion.div
+                key={index}
+                className="w-full p-4 product-item"
+                initial={{ x: -100, opacity: 0 }}
+                animate={carouselControls}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                custom={index}
+              >
+                <div className="border rounded-lg p-4 shadow-lg bg-white">
+                  <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
+                  <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
+                  <p className="text-black font-medium">{product.price}</p>
+                </div>
+              </motion.div>
+            ))
+          : loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
+              <motion.div
+                key={index}
+                className="w-1/4 p-4 product-item"
+                initial={{ opacity: 0, y: 50 }}
+                animate={carouselControls}
+                custom={index}
+              >
+                <div className="border rounded-lg p-4 shadow-lg bg-white">
+                  <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
+                  <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
+                  <p className="text-black font-medium">{product.price}</p>
+                </div>
+              </motion.div>
+            ))}
       </div>
-
-      {/* Navigation Buttons */}
-      <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 opacity-10 text-white p-2 rounded-full shadow-lg"
-        onClick={prevSlide}
-      >
-        <ChevronLeft />
-      </button>
-      <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 opacity-10 text-white p-2 rounded-full shadow-lg"
-        onClick={nextSlide}
-      >
-        <ChevronRight />
-      </button>
+      {!isSmallScreen && (
+        <>
+          <button
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 opacity-10 text-white p-2 rounded-full shadow-lg"
+            onClick={prevSlide}
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 opacity-10 text-white p-2 rounded-full shadow-lg"
+            onClick={nextSlide}
+          >
+            <ChevronRight />
+          </button>
+        </>
+      )}
     </div>
   );
 };
