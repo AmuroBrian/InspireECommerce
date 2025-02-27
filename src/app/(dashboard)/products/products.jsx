@@ -124,7 +124,7 @@ const products = [
   },
   {
     id: 13,
-    name: "Clinience Vit C",
+    name: "Clinience Ceramide",
     image: "./images/b2.jpg",
     description: "Clinience is a supplementbrand that utilizes advancedliposome technology,developed in collaborationwith Japanese medical andresearch institutions, toensure high precision andsuperior quality.",
     info: "For Vitamin C, take 1 to 3 tablets per day.For 5-ALA, take 4 to 8 sticks per day withwith water or lukewarm water.",
@@ -244,14 +244,29 @@ const AnimatedCard = ({ name, image, description, info, price, use }) => {
 };
 
 const ProductPage = () => {
+
+  const router = useRouter();
+
+  const handleCheckout = (product) => {
+    const productQuery = encodeURIComponent(JSON.stringify(product));
+    router.push(`/checkout?product=${productQuery}`);
+  };
+
   return (
-    <div className="flex flex-wrap justify-center p-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full md:px-32">
-        {products.map((product) => (
-          <AnimatedCard key={product.id} {...product} />
-        ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-8">
+    {products.map((product) => (
+      <div
+        key={product.id}
+        className="border rounded-lg p-4 shadow-md cursor-pointer"
+        onClick={() => handleCheckout(product)}
+      >
+        <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
+        <h3 className="text-lg font-semibold mt-2">{product.name}</h3>
+        <p className="text-gray-600">{product.description}</p>
+        <p className="font-bold mt-2">${product.price}</p>
       </div>
-    </div>
+    ))}
+  </div>
   );
 };
 
