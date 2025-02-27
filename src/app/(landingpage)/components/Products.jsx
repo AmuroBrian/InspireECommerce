@@ -1,12 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const Products = ({ products = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerSlide = 4;
+  const controls = useAnimation();
+  const carouselControls = useAnimation();
 
+  // Function to loop products for infinite scrolling
   const getLoopedProducts = () => {
     if (products.length <= itemsPerSlide) return products;
     return [...products, ...products.slice(0, itemsPerSlide)];
@@ -24,22 +27,47 @@ const Products = ({ products = [] }) => {
     );
   };
 
+  // Scroll-triggered animations for the blue line & carousel
   useEffect(() => {
-    const revealOnScroll = () => {
-      document.querySelectorAll(".fade-in").forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          el.classList.add("visible");
+    const handleScroll = () => {
+      const triggerHeight = window.innerHeight / 1.5; // Adjust trigger point
+      const blueLine = document.querySelector(".blue-line");
+      const carousel = document.querySelector(".carousel-container");
+
+      if (blueLine) {
+        const rect = blueLine.getBoundingClientRect();
+        if (rect.top < triggerHeight) {
+          controls.start({ x: 0, transition: { duration: 0.8, ease: "easeOut" } });
+        } else {
+          controls.start({ x: "100%", transition: { duration: 0.8, ease: "easeIn" } });
         }
-      });
+      }
+
+      if (carousel) {
+        const rect = carousel.getBoundingClientRect();
+        if (rect.top < triggerHeight) {
+          carouselControls.start((i) => ({
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, delay: i * 0.2, ease: "easeOut" },
+          }));
+        } else {
+          carouselControls.start((i) => ({
+            opacity: 0,
+            y: 50,
+            transition: { duration: 0.5, delay: i * 0.1, ease: "easeIn" },
+          }));
+        }
+      }
     };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-    return () => window.removeEventListener("scroll", revealOnScroll);
-  }, []);
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls, carouselControls]);
 
   return (
-    <div className="relative w-full mx-auto bg-white p-6 ">
+    <div className="relative w-full mx-auto bg-white p-6">
       <style>{`
         @font-face {
           src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
@@ -55,38 +83,37 @@ const Products = ({ products = [] }) => {
           text-align: center;
           color: transparent;
           font-family: "Meta", sans-serif;
-          text-shadow: 5px 5px 0px #74abdb,
-            
-           
-        
+          text-shadow: 5px 5px 0px #74abdb;
           cursor: pointer;
         }
         .animated-title:hover {
           font-variation-settings: "wght" 100, "ital" 0;
           text-shadow: none;
         }
-        
-        .blue-line {
-          width: 100%;
-          height: 4px;
-          background-color: #74abdb;
-        }
       `}</style>
-      
-      <div className="blue-line"></div>
+
+      {/* Blue Line with Scroll Animation */}
+      <motion.div
+        className="blue-line h-1 bg-[#74abdb] w-full"
+        initial={{ x: "100%" }}
+        animate={controls}
+      ></motion.div>
+
       <div className="flex justify-center items-center mb-8">
         <span className="text-5xl font-extrabold text-black">꧁</span>
         <h1 className="animated-title mx-4">IBeauty</h1>
         <span className="text-5xl font-extrabold text-black">꧂</span>
       </div>
-      <div className="flex overflow-hidden">
+
+      {/* Product Carousel with Scroll Animation */}
+      <div className="flex overflow-hidden carousel-container">
         {loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
           <motion.div
             key={index}
-            className="w-1/4 p-4 fade-in"
+            className="w-1/4 p-4"
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            animate={carouselControls}
+            custom={index} // Custom index for staggered animation
           >
             <div className="border rounded-lg p-4 shadow-lg bg-white">
               <img
@@ -100,6 +127,8 @@ const Products = ({ products = [] }) => {
           </motion.div>
         ))}
       </div>
+
+      {/* Navigation Buttons */}
       <button
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 opacity-10 text-white p-2 rounded-full shadow-lg"
         onClick={prevSlide}
