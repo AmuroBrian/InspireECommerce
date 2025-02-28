@@ -15,11 +15,13 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="bg-white w-full overflow-x-hidden">
-
+      <div className="bg-white w-full overflow-x-hidden ">
+      
       <Products products={dummyProducts} /> {/* Fixed prop name */}
+     
       <Products2 products={dummyProducts} /> {/* Fixed prop name */}
       </div>
+    
     </div>
   );
 }

@@ -14,7 +14,7 @@ const Products = ({ products = [] }) => {
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth < 768);
     };
-    
+
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -65,54 +65,82 @@ const Products = ({ products = [] }) => {
         }
       });
     };
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls, carouselControls]);
 
   return (
-    <div className="relative w-full mx-auto bg-white p-6">
+    <div className="relative w-full mx-auto bg-white p-6 overflow-x-hidden">
+      {/* Blue Animated Line */}
       <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
+
+      {/* IBeauty Title with Hover Animation */}
       <div className="flex justify-center items-center mb-8">
-        <span className="text-5xl font-extrabold text-black">꧁</span>
-        <h1 className="text-4xl font-extrabold text-black mx-4">IBeauty</h1>
-        <span className="text-5xl font-extrabold text-black">꧂</span>
+        <motion.span
+          className="text-5xl font-extrabold text-black"
+          whileHover={{ scale: 1.2, rotate: -10 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          ꧁
+        </motion.span>
+        <motion.h1
+          className="animated-title mx-4 text-4xl font-bold text-gray-800"
+          whileHover={{ scale: 1.1, color: "#74abdb" }}
+          transition={{ duration: 0.3 }}
+        >
+          IBeauty
+        </motion.h1>
+
+        <motion.span
+          className="text-5xl font-extrabold text-black"
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          ꧂
+        </motion.span>
       </div>
-      <div className={`flex ${isSmallScreen ? "flex-col" : "overflow-hidden"} carousel-container`}>
-        {isSmallScreen
-          ? products.map((product, index) => (
-              <motion.div
-                key={index}
-                className="w-full p-4 product-item"
-                initial={{ x: -100, opacity: 0 }}
-                animate={carouselControls}
-                exit={{ x: 100, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                custom={index}
-              >
-                <div className="border rounded-lg p-4 shadow-lg bg-white">
-                  <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-                  <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-                  <p className="text-black font-medium">{product.price}</p>
-                </div>
-              </motion.div>
-            ))
-          : loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
-              <motion.div
-                key={index}
-                className="w-1/4 p-4 product-item"
-                initial={{ opacity: 0, y: 50 }}
-                animate={carouselControls}
-                custom={index}
-              >
-                <div className="border rounded-lg p-4 shadow-lg bg-white">
-                  <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-                  <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-                  <p className="text-black font-medium">{product.price}</p>
-                </div>
-              </motion.div>
-            ))}
-      </div>
+
+      {/* Product Carousel */}
+<div className={`flex ${isSmallScreen ? "flex-col" : "h-[400px] overflow-hidden"} carousel-container`}>
+  {isSmallScreen
+    ? products.map((product, index) => (
+        <motion.div
+          key={index}
+          className="w-full p-4 product-item"
+          initial={{ x: -100, opacity: 0 }}
+          animate={carouselControls}
+          exit={{ x: 100, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          custom={index}
+        >
+          <div className="border rounded-lg mt-10 shadow-lg bg-white">
+            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
+            <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
+            <p className="text-black font-medium">{product.price}</p>
+          </div>
+        </motion.div>
+      ))
+    : loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
+        <motion.div
+          key={index}
+          className="w-1/4 p-4 product-item"
+          initial={{ opacity: 0, y: 50 }}
+          animate={carouselControls}
+          custom={index}
+        >
+          <div className="border rounded-lg p-5 shadow-lg bg-white">
+            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
+            <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
+            <p className="text-black font-medium p-3">{product.price}</p>
+          </div>
+        </motion.div>
+      ))}
+</div>
+
+
+      {/* Navigation Arrows */}
       {!isSmallScreen && (
         <>
           <button

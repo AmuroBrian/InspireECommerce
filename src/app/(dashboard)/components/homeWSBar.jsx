@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const products = [
   { name: "YBY Morning Mask (7pcs)", price: 210, image: "/images/YBYMorningMask(7pcs).png" },
-  { name: "YBY Morning Mask (30pcs)", price: 730, image: "/images/ybyMorningMaskYBYmorningmask.png" },
+  { name: "YBY Morning Mask (30pcs)", price: 730, image: "/images/YBYMorningMask(30pcs).png" },
   { name: "YBY Night Mask (7pcs)", price: 210, image: "/images/YBYNightMask(7pcs).png" },
   { name: "YBY Night Mask (30pcs)", price: 730, image: "/images/YBYNightMask(30pcs).png" },
   { name: "YBY Cleansing Gel", price: 730, image: "/images/iBeauty1.png" },
@@ -58,10 +58,9 @@ export default function Dashboard() {
 </div>
 
       
-      
       <div
         ref={containerRef}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl place-items-center z-0"
+        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl place-items-center z-0"
       >
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product, index) => (
