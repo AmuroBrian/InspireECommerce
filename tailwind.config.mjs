@@ -1,5 +1,3 @@
-import IBeauty from '@/app/(dashboard)/Ibeauty/page';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,8 +10,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customBlue: "#74abdb",
-        iBeauty: "#E7F5DE",
+        backgroundColor: "#daf1ff",
+        primaryColor: "white",
+        secondaryColor: "#4DC5D6",
+        ibeautyPrimaryColor: "#EE88CD",
+        ibeautySecondarColor: "#D31D8C",
+        jtechPrimaryColor: "#A5F2F3",
+        jtechSecondaryColor: "#4DC5D6",
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in-out",

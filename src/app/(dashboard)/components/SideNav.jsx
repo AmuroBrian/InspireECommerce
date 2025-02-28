@@ -54,7 +54,7 @@ export default function SidebarNavigation() {
 
   return (
     <div className="relative h-screen overflow-hidden z-10">
-      <nav className="bg-sky-700 p-4 shadow-md w-full fixed top-0 z-50 h-16">
+      <nav className="bg-secondaryColor p-4 shadow-md w-full fixed top-0 z-50 h-16">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
@@ -96,13 +96,13 @@ export default function SidebarNavigation() {
         initial={{ x: -250 }}
         animate={{ x: isSidebarOpen ? 0 : -250 }}
         transition={{ duration: 0.3, ease: "linear" }}
-        className="fixed top-0 left-0 h-full w-60 bg-sky-800 text-white p-5 shadow-lg"
+        className="fixed top-0 left-0 h-full w-60 bg-secondaryColor text-white p-5 shadow-lg"
       >
         <ul className="mt-16 space-y-4">
           {categories.map((category, index) => (
             <li
               key={index}
-              className="p-2 hover:bg-gray-700 rounded-md cursor-pointer"
+              className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer"
               onClick={() => {
                 setIsSidebarOpen(false);
                 router.push(category.path);

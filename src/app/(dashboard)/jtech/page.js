@@ -8,7 +8,7 @@ export default function JTech() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-6 mt-28">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center text-center bg-backgroundColor text-white p-6 mt-28">
       <h1 className="text-3xl font-bold text-cyan-400 mb-6 tracking-widest">JTech PAGE</h1>
 
       {/* Image Grid (3 Columns, 1 Row) */}
