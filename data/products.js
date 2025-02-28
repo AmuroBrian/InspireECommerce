@@ -217,7 +217,7 @@ const products = [
         info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         imgsrc: "public/images/ibeauty1.png",
-        price: "7000",
+        price: "700",
     },
 
     {
