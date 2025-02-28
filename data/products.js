@@ -221,8 +221,8 @@ const products = [
     },
 
     {
-        productid: "AplhaHT",
-        name: "Aplha-HT",
+        productid: "AlphaHT",
+        name: "Alpha-HT",
         category: "jtech",
         subcategories: "alpha",
         description: "Alpha-HT is committed to transforming the way we power our world. By integrating a-HT technology, our air coolers provide a sustainable, cost-effective solution for a more comfortable and ecofriendly future, while reducing your energy consumption.",
