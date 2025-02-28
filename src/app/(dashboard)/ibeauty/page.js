@@ -28,7 +28,6 @@ export default function IBeauty() {
         link: "/product/exfoliating-toner"
       }
     ],
-    
     iFresh: [
       {
         src: "/images/iBeauty1.png",
