@@ -170,6 +170,16 @@ const products = [
 
   {
     id: 18,
+    name: "Stem Sai",
+    image: "./images/b2.jpg",
+    description: "loremsimply dummy text of the printing and typesetting industry.",
+    info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    use: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
+    price: 7125,
+  },
+
+  {
+    id: 19,
     name: "FOM Pack",
     image: "./images/b2.jpg",
     description: "loremsimply dummy text of the printing and typesetting industry.",
@@ -179,7 +189,7 @@ const products = [
   },
 
   {
-    id: 19,
+    id: 20,
     name: "YBY Cleansing Gel*",
     image: "./images/b2.jpg",
     description: "loremsimply dummy text of the printing and typesetting industry.",
@@ -189,7 +199,7 @@ const products = [
   },
 
   {
-    id: 20,
+    id: 21,
     name: "Aplha-HT",
     image: "./images/b2.jpg",
     description: "Alpha-HT is committed to transforming the way we power our world. By integrating a-HT technology, our air coolers provide a sustainable, cost-effective solution for a more comfortable and ecofriendly future, while reducing your energy consumption.",
@@ -199,7 +209,7 @@ const products = [
   },
 
   {
-    id: 21,
+    id: 22,
     name: "Desknet's NEO",
     image: "./images/b2.jpg",
     description: "Desknet's NEO is a cloud-based groupware popular in Japan, offering businesses a customizable platform for collaboration, communication, and workflow management.",
@@ -209,7 +219,7 @@ const products = [
   },
 
   {
-    id: 22,
+    id: 23,
     name: "SQRC® (Security QR Code)",
     image: "./images/b2.jpg",
     description: "A single QR Code can store both public and private data, with the private data accessible only through a specialized reader equipped with a cryptographic key, ensuring secure data protection. Since SQRC visually resembles a standard QR Code, it helps prevent forgery and tampering.",
