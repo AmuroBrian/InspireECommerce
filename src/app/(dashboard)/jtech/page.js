@@ -1,28 +1,46 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import products from "./../../../../data/products";
 
 export default function JTech() {
   const jTechProducts = products.filter((p) => p.category === "jtech");
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center text-center bg-backgroundColor text-white p-6 mt-28">
-      <h1 className="text-3xl font-bold text-cyan-400 mb-6 tracking-widest">JTech PAGE</h1>
+    <div className="w-full h-full bg-backgroundColor text-gray-800 flex flex-col items-center pt-[100px] px-4 sm:px-6 md:px-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-400 mb-8 tracking-widest text-center">
+        JTech PAGE
+      </h1>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {jTechProducts.map((product) => (
-          <div key={product.productid} className="flex flex-col items-center w-80 p-4 rounded-lg shadow-lg shadow-cyan-500/50 transition-transform duration-300 hover:scale-110">
-            <Link href={`/jtech/${product.productid}`}>
-              <img
-                src={product.imgsrc}
-                alt={product.name}
-                className="w-80 h-[400px] object-cover rounded-lg cursor-pointer"
-              />
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-7xl">
+        {jTechProducts.map((product, index) => (
+          <motion.div
+            key={product.productid}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="flex flex-col items-center w-full p-4 rounded-lg shadow-lg shadow-cyan-500/50 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          >
+            <Link href={`/jtech/${product.productid}`} passHref>
+              <div className="w-full aspect-[4/5] overflow-hidden rounded-lg">
+                <img
+                  src={product.imgsrc}
+                  alt={product.name}
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </div>
             </Link>
-            <p className="text-md font-semibold text-cyan-300 mt-2">{product.name}</p>
-            <p className="text-lg font-bold text-cyan-500">{product.price}</p>
-          </div>
+            <p className="text-md sm:text-lg font-semibold text-cyan-300 mt-3 text-center">
+              {product.name}
+            </p>
+            <p className="text-lg sm:text-xl font-bold text-cyan-500">
+              {product.price}
+            </p>
+          </motion.div>
         ))}
       </div>
     </div>
