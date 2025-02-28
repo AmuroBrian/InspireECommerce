@@ -253,4 +253,6 @@ const products = [
         imgsrc: "public/images/SecurityQRCode.png",
         price: "To be discussed with a representative of Inspire Next Global Inc.",
     },
-]
+];
+
+export default products;
