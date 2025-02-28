@@ -65,11 +65,11 @@ export default function SidebarNavigation() {
             </button>
             <div className="flex items-center text-black dark:text-white text-lg font-semibold">
               <img
-                src="/images/InspireWalletLogo.png"
+                src="/images/logoinpire.png"
                 alt="Logo"
-                className="w-10 h-10 object-contain"
+                className="w-50 h-10 object-contain"
               />
-              <span className="ml-2">Inspire</span>
+          
             </div>
           </div>
 

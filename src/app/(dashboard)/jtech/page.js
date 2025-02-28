@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import products from "./../../../../data/products";
+import products from "../../data/products";
 
 export default function JTech() {
   const jTechProducts = products.filter((p) => p.category === "jtech");

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import products from "./../../../../../data/products";
+import products from "../../../data/products";
 import { useParams } from "next/navigation"; // ✅ Use useParams instead of useRouter
 
 const Page = () => {

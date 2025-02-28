@@ -16,7 +16,7 @@ export default function Navbar() {
       <nav className="flex items-center justify-between p-4 bg-white shadow-md">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
-          <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+          <Image src="/images/logoinpire.png" alt="Logo" width={120} height={30} />
           <span className="text-xl font-bold text-customBlue">InShop</span>
         </div>
 
