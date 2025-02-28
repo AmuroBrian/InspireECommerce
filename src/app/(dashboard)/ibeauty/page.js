@@ -57,10 +57,10 @@ export default function IBeauty() {
       link: "/product/exfoliating-toner"
     }
   ];
-
+//#92c8ef
   return (
     <div className='w-full h-full'>
-      <div className='w-full flex flex-col items-center pt-[100px] bg-gradient-to-r from-pink-100 via-rose-200 to-purple-200 text-gray-800'>
+      <div className='w-full flex flex-col items-center pt-[100px] bg-backgroundColor text-gray-800'>
         <h1 className="text-3xl font-bold text-rose-600 mb-6 tracking-wider">iBeauty</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-screen-lg w-full">
           {products.map((product, index) => (
