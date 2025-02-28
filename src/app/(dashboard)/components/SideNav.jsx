@@ -59,7 +59,7 @@ export default function SidebarNavigation() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="text-2xl bg-sky-700 p-2 rounded-md shadow-md text-white"
+              className="text-2xl bg-secondaryColor p-2 rounded-md shadow-md text-white"
             >
               {isSidebarOpen ? <X /> : <Menu />}
             </button>
@@ -77,13 +77,13 @@ export default function SidebarNavigation() {
             <span className="text-black dark:text-white">{`${getGreeting()}, ${userName}`}</span>
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="text-xl bg-sky-700 p-2 rounded-md shadow-md text-white"
+              className="text-xl bg-secondaryColor p-2 rounded-md shadow-md text-white"
             >
               <User />
             </button>
             {isProfileOpen && (
-              <div className="absolute right-0 mt-24 w-48 bg-sky-700 shadow-md rounded-md p-2">
-                <p className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md cursor-pointer">
+              <div className="absolute right-0 mt-24 w-48 bg-secondaryColor shadow-md rounded-md p-2">
+                <p className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white">
                   Profile
                 </p>
               </div>
