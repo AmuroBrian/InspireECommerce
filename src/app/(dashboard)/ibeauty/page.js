@@ -1,4 +1,5 @@
 import React from 'react';
+import IBeautyGrid from './../components/IBeauty'; // Import renamed grid component
 
 export default function IBeauty() {
   const products = [
@@ -59,27 +60,11 @@ export default function IBeauty() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center text-center bg-gradient-to-r from-pink-100 via-rose-200 to-purple-200 text-gray-800 px-4 mt-[80px]">
-      <h1 className="text-3xl font-bold text-rose-600 mb-6 tracking-wider">iBeauty PAGE</h1>
-
-      {/* Responsive Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-screen-lg w-full">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center w-full p-4 rounded-lg shadow-lg shadow-rose-300/50 transition-transform duration-300 hover:scale-105 cursor-pointer"
-          >
-            <a href={product.link} className="w-full">
-              <img
-                src={product.src}
-                alt={product.name}
-                className="w-full h-auto object-cover rounded-lg"
-              />
-            </a>
-            <p className="text-md font-semibold text-rose-500 mt-2">{product.name}</p>
-            <p className="text-lg font-bold text-rose-700">{product.price}</p>
-          </div>
-        ))}
+    <div className='w-full h-full'>
+      <div className='w-full flex flex-col items-center pt-[100px] bg-gradient-to-r from-pink-100 via-rose-200 to-purple-200 text-gray-800'>
+        <h1 className="text-3xl font-bold text-rose-600 mb-6 tracking-wider">iBeauty</h1>
+        <IBeautyGrid products={products} />
+        <div className='w-full h-[100px]'></div>
       </div>
     </div>
   );
