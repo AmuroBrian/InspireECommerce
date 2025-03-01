@@ -3,33 +3,8 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import products from "@/app/data/products";
 
-const products = [
-  { name: "YBY Morning Mask (7pcs)", price: 210, image: "/images/YBYMorningMask(7pcs).png" },
-  { name: "YBY Morning Mask (30pcs)", price: 730, image: "/images/YBYMorningMask(30pcs).png" },
-  { name: "YBY Night Mask (7pcs)", price: 210, image: "/images/YBYNightMask(7pcs).png" },
-  { name: "YBY Night Mask (30pcs)", price: 730, image: "/images/YBYNightMask(30pcs).png" },
-  { name: "YBY Cleansing Gel", price: 730, image: "/images/iBeauty1.png" },
-  { name: "PUCCU Lipstick Bloody Red", price: 635, image: "/images/beyondred.png" },
-  { name: "PUCCU Lipstick Berry Flamingo", price: 635, image: "/images/berryflamingo.png" },
-  { name: "PUCCU Lipstick Sparky Blood Orange", price: 635, image: "/images/iBeauty4.png" },
-  { name: "PUCCU Lipstick Princess Piggy", price: 635, image: "/images/princesspiggy.png" },
-  { name: "FOM Toner", price: 799, image: "/images/iBeauty6.png" },
-  { name: "FOM Aqua Serum", price: 1299, image: "/images/iBeauty7.png" },
-  { name: "FOM Cream", price: 1699, image: "/images/iBeauty8.png" },
-  { name: "Clinience Vit C", price: 3499, image: "/images/clinienceVitC.png" },
-  { name: "Clinience Cytokines", price: 11499, image: "/images/cliniencecytokines.png" },
-  { name: "Clinience NMN", price: 11499, image: "/images/cliniencenmn.png" },
-  { name: "Dermashot", price: 7600, image: "/images/iBeauty3.png" },
-  { name: "Pure Exom", price: 7125, image: "/images/iBeauty4.png" },
-  { name: "FOM Pack", price: 2800, image: "/images/iBeauty5.png" },
-  { name: "YBY Cleansing Gelle", price: 700, image: "/images/iBeauty6.png" },
-  { name: "Alpha-HT", price: 1000, image: "/images/alpha-ht.png" },
-  { name: "Desknet's NEO", price: 1000, image: "/images/Desknet'sNEO.png" },
-  { name: "SQRC® (Security QR Code)", price: 1000, image: "/images/SecurityQRCode.png" },
-  { name: "Stem sai Serum", price: 1000, image: "/images/stemsaiserum.png" },
-  { name: "Stem sai Cream", price: 1000, image: "/images/stemsaicream.png" },
-];
 
 export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -75,9 +50,9 @@ export default function Dashboard() {
                 className="p-4 rounded-lg bg-transparent  flex flex-col items-center transition-transform duration-300 cursor-pointer"
               >
                 <img
-                  src={product.image}
+                  src={product.imgsrc}
                   alt={product.name}
-                  className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover mb-2 rounded-md"
+                  className="w-35 h-35 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover mb-2 rounded-md"
                 />
                 <p className="font-semibold text-center text-sm sm:text-base">{product.name}</p>
                 <p className="text-gray-600 text-xs sm:text-sm">Price: ₱{product.price}</p>
