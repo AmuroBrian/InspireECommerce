@@ -81,7 +81,7 @@ const Products = ({ products = [] }) => {
   }, [controls, carouselControls]);
 
   return (
-    <div className="relative w-full mx-auto bg-white p-6 overflow-x-hidden overflow-y-scroll no-scrollbar">
+    <div className="relative w-full mx-auto bg-white p-6 overflow-x-hidden">
       {/* Blue Animated Line */}
       <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
 
@@ -101,7 +101,8 @@ const Products = ({ products = [] }) => {
       </div>
 
       {/* Product Carousel */}
-<div className={`flex ${isSmallScreen ? "flex-col" : "flex-row"} carousel-container`}>
+   {/* Product Carousel */}
+<div className={`flex ${isSmallScreen ? "flex-col" : "h-[400px] overflow-hidden"} carousel-container`}>
   {isSmallScreen
     ? products.map((product, index) => (
         <motion.div
@@ -128,10 +129,10 @@ const Products = ({ products = [] }) => {
           animate={carouselControls}
           custom={index}
         >
-          <div className="border rounded-lg p-4 shadow-lg bg-white">
+          <div className="border rounded-lg p-5 shadow-lg bg-white">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
             <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-            <p className="text-black font-medium">{product.price}</p>
+            <p className="text-black font-medium p-3">{product.price}</p>
           </div>
         </motion.div>
       ))}

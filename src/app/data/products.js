@@ -10,6 +10,7 @@ const products = [
         imgsrc: "/images/YBYMorningMask(7pcs).png",
         price: "210",
     },
+
     {
         productid: "YBYMornMask30",
         name: "YBY Morning Mask (30pcs)",
@@ -253,6 +254,8 @@ const products = [
         imgsrc: "/images/SecurityQRCode.png",
         price: "To be discussed with a representative of Inspire Next Global Inc.",
     },
+
+   
 ];
 
 export default products;
