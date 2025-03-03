@@ -23,9 +23,10 @@ export default function JTech() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="flex flex-col items-center w-full p-4 rounded-lg shadow-lg shadow-cyan-500/50 transition-transform duration-300 hover:scale-105 cursor-pointer"
+            whileHover={{ scale: 1.1, transition: { duration: 0.2 } }} // 👈 Added hover zoom effect
+            className="flex flex-col w-full p-4 rounded-lg shadow-lg shadow-cyan-500/50 transition-transform duration-300 cursor-pointer"
           >
-            <Link href={`/jtech/${product.productid}`} passHref>
+            <Link href={`/jtech/${product.productid}`} passHref className="w-full flex-grow">
               <div className="w-full aspect-[4/5] overflow-hidden rounded-lg">
                 <img
                   src={product.imgsrc}
@@ -34,15 +35,19 @@ export default function JTech() {
                 />
               </div>
             </Link>
-            <p className="text-md sm:text-lg font-semibold text-cyan-300 mt-3 text-center">
-              {product.name}
-            </p>
-            <p className="text-lg sm:text-xl font-bold text-cyan-500">
-              {product.price}
-            </p>
+            <div className="mt-auto flex flex-col items-center">
+              <p className="text-md sm:text-lg font-semibold text-cyan-300 mt-3 text-center">
+                {product.name}
+              </p>
+              <p className="text-lg sm:text-xl font-bold text-cyan-500">
+                {product.price}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
+
+      <div className='w-full h-[100px] sm:h-[100px] md:h-[100px]'></div>
     </div>
   );
 }
