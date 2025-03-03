@@ -10,6 +10,7 @@ const products = [
         imgsrc: "/images/YBYMorningMask(7pcs).png",
         price: "210",
     },
+
     {
         productid: "YBYMornMask30",
         name: "YBY Morning Mask (30pcs)",
@@ -253,6 +254,21 @@ const products = [
         imgsrc: "/images/SecurityQRCode.png",
         price: "To be discussed with a representative of Inspire Next Global Inc.",
     },
+
+
+    {
+        productid: "new",
+        name: "new1",
+        category: "jtech",
+        subcategories: "A single QR Code can store both public and private data, with the private data accessible only through a specialized reader equipped with a cryptographic key, ensuring secure data protection. Since SQRC visually resembles a standard QR Code, it helps prevent forgery and tampering.",
+        description: "A single code carries two types of data: public and private. Public data is accessible to anyone with a standard QR Code reader, while private data is encrypted and can only be accessed by a specialized reader equipped with a cryptographic key.",
+        info: "A single code carries two types of data: public and private. Public data is accessible to anyone with a standard QR Code reader, while private data is encrypted and can only be accessed by a specialized reader equipped with a cryptographic key.",
+        usage: "To be discussed with a representative of Inspire Next Global Inc.",
+        imgsrc: "/images/SecurityQRCode.png",
+        price: "To be discussed with a representative of Inspire Next Global Inc.",
+    },
+
+   
 ];
 
 export default products;

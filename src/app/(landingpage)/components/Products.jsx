@@ -77,7 +77,7 @@ const Products = ({ products = [] }) => {
       <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
 
       {/* IBeauty Title with Hover Animation */}
-      <div className="flex justify-center items-center mb-8">
+      {/* <div className="flex justify-center items-center mb-8">
         <motion.span
           className="text-5xl font-extrabold text-black"
           whileHover={{ scale: 1.2, rotate: -10 }}
@@ -100,7 +100,7 @@ const Products = ({ products = [] }) => {
         >
           ꧂
         </motion.span>
-      </div>
+      </div> */}
 
       {/* Product Carousel */}
 <div className={`flex ${isSmallScreen ? "flex-col" : "h-[400px] overflow-hidden"} carousel-container`}>
@@ -115,7 +115,7 @@ const Products = ({ products = [] }) => {
           transition={{ duration: 0.5 }}
           custom={index}
         >
-          <div className="border rounded-lg mt-10 shadow-lg bg-white">
+          <div className="border rounded-lg mt-10 shadow-lg bg-white p-6">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
             <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
             <p className="text-black font-medium">{product.price}</p>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import products from "./../../../../data/products";
+import products from "@/app/data/products";
 
 export default function JTech() {
   const jTechProducts = products.filter((p) => p.category === "jtech");

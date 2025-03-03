@@ -17,7 +17,7 @@ export default function Navbar() {
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <Image src="/images/logoinpire.png" alt="Logo" width={120} height={30} />
-          <span className="text-xl font-bold text-customBlue">InShop</span>
+          <span className="text-xl font-bold text-customBlue"></span>
         </div>
 
         {/* Navigation Links */}
