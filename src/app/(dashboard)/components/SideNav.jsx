@@ -102,11 +102,13 @@ export default function SidebarNavigation() {
               {isSidebarOpen ? <X /> : <Menu />}
             </button>
             <div className="flex items-center text-black text-lg font-semibold">
-              <img
-                src="/images/logoinpire.png"
-                alt="Logo"
-                className="w-50 h-10 object-contain"
-              />
+            <img
+              src="/images/logoinpire.png"
+              alt="Logo"
+              className="w-50 h-10 object-contain cursor-pointer"
+              onClick={() => router.back()}
+            />
+
             </div>
           </div>
 
