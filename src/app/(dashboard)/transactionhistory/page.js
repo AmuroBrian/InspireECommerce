@@ -51,7 +51,7 @@ export default function TransactionHistory() {
     };
 
     return (
-        <div className='w-full h-full flex flex-col items-center p-4'>
+        <div className='w-full h-full flex flex-col items-center p-4 bg-backgroundColor'>
             <div className='w-full h-[80px]'></div>
             <h2 className='text-xl font-bold mb-4'>Transaction History</h2>
             <div className='w-full max-w-4xl bg-white shadow-md rounded-lg p-4'>
