@@ -34,7 +34,7 @@ export default function ShippingStatus() {
     }, [user]); // Fetch data when user logs in or component mounts
 
     return (
-        <div className="w-full h-full flex flex-col items-center p-10 mt-[100px] bg-backgroundColor">
+        <div className="w-full h-full flex flex-col items-center p-10 mt-[100px] ">
             <h2 className="text-2xl font-bold mb-4">Shipping Status</h2>
             {orders.length === 0 ? (
                 <p>No valid orders to display.</p>

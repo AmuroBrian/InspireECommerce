@@ -18,7 +18,7 @@ export default function ResellerDashboard() {
                 <div className="relative z-10 text-white">
                     <h1 className="text-3xl font-bold text-black">DO YOU WANT TO BECOME A RESELLER</h1>
                     <button
-                        className="mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition"
+                        className="mt-6 px-6 py-3 bg-secondaryColor text-black font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition"
                         onClick={() => setIsModalOpen(true)}
                     >
                         CLICK HERE
