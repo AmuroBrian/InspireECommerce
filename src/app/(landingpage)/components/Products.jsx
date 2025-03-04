@@ -72,13 +72,16 @@ const Products = ({ products = [] }) => {
   }, [controls, carouselControls]);
 
   return (
-    <div className="relative w-full mx-auto bg-white p-6 overflow-x-hidden">
+    <div className="relative w-full mx-auto bg-white p-6 overflow-y-hidden overflow: visible;
+">
+
+
       {/* Blue Animated Line */}
       <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
 
 
       {/* Product Carousel */}
-      <div className={`${isSmallScreen ? "grid grid-cols-2 gap-4 " : "h-[400px] overflow-hidden flex"} carousel-container`}>
+      <div className={`${isSmallScreen ? "grid grid-cols-2 gap-2 " : "h-[420px] overflow-hidden flex"} carousel-container`}>
 
   {isSmallScreen
     ? products.map((product, index) => (
@@ -91,21 +94,26 @@ const Products = ({ products = [] }) => {
           transition={{ duration: 0.5 }}
           custom={index}
         >
-          <div className="border rounded-lg p-5 shadow-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+          <div className="border rounded-lg p-2 mt-1 shadow-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
           {/* Responsive Image */}
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-md"
+            className="w-30 h-30 sm:h-56 md:h-64 lg:h-72 object-cover rounded-md "
           />
 
             {/* Responsive Text */}
-            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mt-2 text-gray-900">
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mt-2 text-gray-900 text-center">
               {product.name}
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium p-3">
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium p-3 text-center">
               {product.price}
             </p>
+            
+            <p className="text-md text-black mt-2 w-full break-words line-clamp-2 text-left items-center">
+          {product.description}
+        </p>
+            
           </div>
 
         </motion.div>
@@ -118,10 +126,14 @@ const Products = ({ products = [] }) => {
           animate={carouselControls}
           custom={index}
         >
-          <div className="border rounded-lg p-5 shadow-lg bg-white">
+          <div className="border rounded-lg p-5 shadow-lg bg-white min-h-screen overflow-visible
+">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-            <p className="text-black font-medium p-3">{product.price}</p>
+            <h3 className="text-lg font-semibold mt-2 text-black text-center">{product.name}</h3>
+            <p className="text-black font-medium p-1 text-center">{product.price}</p>
+            <p className="text-md text-black mt-2 w-full break-words line-clamp-2 text-left items-center">
+          {product.description}
+        </p>
           </div>
         </motion.div>
       ))}
