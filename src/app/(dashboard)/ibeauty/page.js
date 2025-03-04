@@ -42,9 +42,9 @@ export default function IBeauty() {
                 </div>
                 <p className="text-md text-black mt-2 w-full break-words line-clamp-2">
                   {product.description}
-                </p>
-                
+                </p>                
                 <p className="text-md font-bold text-secondaryColor self-start pt-2">₱{product.price}</p>
+                
               </motion.div>
             ))}
           </div>
