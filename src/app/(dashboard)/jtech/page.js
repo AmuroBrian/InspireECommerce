@@ -39,10 +39,10 @@ export default function JTech() {
               <p className="text-md sm:text-lg font-semibold text-black mt-3 text-center">
                 {product.name}
               </p>
-              <p className="text-lg sm:text-xl font-bold text-black">
-                {product.price}
-              </p>
             </div>
+
+            <p className="text-md text-black mt-2 w-full break-words line-clamp-2">{product.description}</p>                
+              <p className="text-md font-bold text-secondaryColor self-start pt-2">₱ {product.price}</p>
           </motion.div>
         ))}
       </div>

@@ -59,9 +59,10 @@ export default function Dashboard() {
         <p className="font-semibold text-center text-sm sm:text-base text-black">
           {product.name}
         </p>
-        <p className="text-gray-600 text-xs sm:text-sm">
-          Price: ₱{product.price}
-        </p>
+        <p className="text-md text-black mt-2 w-full break-words line-clamp-2 text-left">
+                  {product.description}
+                </p>                
+        <p className="text-md font-bold text-secondaryColor self-start pt-2">₱ {product.price}</p>
       </motion.div>
     </Link>
   ))
