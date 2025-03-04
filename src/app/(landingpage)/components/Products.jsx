@@ -78,7 +78,7 @@ const Products = ({ products = [] }) => {
 
 
       {/* Product Carousel */}
-      <div className={`${isSmallScreen ? "grid grid-cols-2 gap-4" : "h-[400px] overflow-hidden flex"} carousel-container`}>
+      <div className={`${isSmallScreen ? "grid grid-cols-2 gap-4 " : "h-[400px] overflow-hidden flex"} carousel-container`}>
 
   {isSmallScreen
     ? products.map((product, index) => (
@@ -92,21 +92,21 @@ const Products = ({ products = [] }) => {
           custom={index}
         >
           <div className="border rounded-lg p-5 shadow-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
-  {/* Responsive Image */}
-  <img
-    src={product.image}
-    alt={product.name}
-    className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-md"
-  />
+          {/* Responsive Image */}
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-md"
+          />
 
-  {/* Responsive Text */}
-  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mt-2 text-gray-900">
-    {product.name}
-  </h3>
-  <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium p-3">
-    {product.price}
-  </p>
-</div>
+            {/* Responsive Text */}
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mt-2 text-gray-900">
+              {product.name}
+            </h3>
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium p-3">
+              {product.price}
+            </p>
+          </div>
 
         </motion.div>
       ))
