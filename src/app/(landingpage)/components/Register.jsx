@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "./../../../../script/firebaseConfig"; // Ensure the path is correct
 import { useRouter } from "next/navigation";
 
@@ -52,8 +52,24 @@ export default function RegisterModal({ onClose }) {
 
       // Initialize an empty transaction history subcollection
       await setDoc(doc(db, "users", user.uid, "transactionhistory", "init"), {
-        message: "Transaction history initialized",
-        timestamp: new Date(),
+        id: "",
+        Date: new Date(),
+        Product: "",
+        Type: "",
+        Quantity: 0,
+        TotalAmount: 0,
+      });
+
+      await setDoc(doc(db, "users", user.uid, "shippingstatus", "init"), {
+        transactionId: "",
+        productName: "",
+        productPrice: 0,
+        firstName: "",
+        lastName: "",
+        address: "",
+        status: "", // Default to "Pending"
+        message: "Order placed successfully.",
+        timestamp: serverTimestamp(), // Automatically stores Firestore timestamp
       });
 
       setSuccess("Registration successful! Redirecting...");

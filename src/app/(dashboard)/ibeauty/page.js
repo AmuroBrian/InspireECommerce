@@ -17,7 +17,7 @@ export default function IBeauty() {
 
       {Object.entries(categories).map(([category, products], index) => (
         <div key={index} className="w-full max-w-screen-lg mx-auto">
-          
+
           <h2 className="text-2xl font-semibold text-rose-700 mt-10 mb-4">{category} Collection</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {products.map((product, idx) => (
@@ -28,9 +28,9 @@ export default function IBeauty() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                whileHover={{ scale: 1.1, transition: { duration: 0.2 }}} // Zoom effect on the entire card
+                whileHover={{ scale: 1.1, transition: { duration: 0.2 } }} // Zoom effect on the entire card
               >
-                <a href={product.link} className="w-full flex-grow block">
+                <a href={`ibeauty/${product.productid}`} className="w-full flex-grow block">
                   <img
                     src={product.imgsrc}
                     alt={product.name}

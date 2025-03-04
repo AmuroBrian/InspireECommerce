@@ -40,7 +40,7 @@ export default function Dashboard() {
           filteredProducts.map((product, index) => (
             <Link
               key={product.productid}
-              href={`/${encodeURIComponent(product.productid)}`}
+              href={`main/${product.productid}`}
               passHref
             >
               <motion.div
