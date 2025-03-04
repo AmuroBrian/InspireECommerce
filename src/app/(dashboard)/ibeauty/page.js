@@ -39,7 +39,7 @@ export default function IBeauty() {
                 </a>
                 <div className="mt-auto flex flex-col items-center">
                   <p className="text-md font-semibold text-rose-500 mt-2">{product.name}</p>
-                  <p className="text-lg font-bold text-rose-700">{product.price}</p>
+                  <p className="text-lg font-bold text-rose-700">₱ {product.price}</p>
                 </div>
               </motion.div>
             ))}
