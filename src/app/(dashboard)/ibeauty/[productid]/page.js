@@ -84,7 +84,7 @@ const Page = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center bg-white">
+        <div className="w-full h-full flex flex-col items-center bg-backgroundColor">
             <div className="w-full max-w-7xl pt-[100px]">
                 <h2 className="text-2xl font-bold text-center mb-6">CHECKOUT</h2>
                 <div className="flex flex-wrap">
@@ -95,7 +95,7 @@ const Page = () => {
                         </div></div>
 
                         <h3 className="mt-4 text-xl font-semibold">{product.name}</h3>
-                        <p className={`mt-2 text-lg ${product.price.includes("To be discussed") ? "text-gray-600" : "text-green-500"}`}>
+                        <p className={`mt-2 text-lg ${product.price.includes("To be discussed") ? "text-gray-600" : "text-secondaryColor"}`}>
                             {product.price.includes("To be discussed") ? product.price : `PHP ${product.price}`}
                         </p>
                         <p><strong>PRODUCT DESCRIPTION:</strong> {product.description}</p>

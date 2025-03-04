@@ -9,8 +9,8 @@ export default function JTech() {
   const jTechProducts = products.filter((p) => p.category === "jtech");
 
   return (
-    <div className="w-full h-full bg-backgroundColor text-gray-800 flex flex-col items-center pt-[100px] px-4 sm:px-6 md:px-10">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-400 mb-8 tracking-widest text-center">
+    <div className="w-full h-full bg-white text-black flex flex-col items-center pt-[100px] px-4 sm:px-6 md:px-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-8 tracking-widest text-center">
         JTech PAGE
       </h1>
 
@@ -36,13 +36,13 @@ export default function JTech() {
               </div>
             </Link>
             <div className="mt-auto flex flex-col items-center">
-              <p className="text-md sm:text-lg font-semibold text-cyan-300 mt-3 text-center">
+              <p className="text-md sm:text-lg font-semibold text-black mt-3 text-center">
                 {product.name}
               </p>
-              <p className="text-lg sm:text-xl font-bold text-cyan-500">
-                {product.price}
-              </p>
             </div>
+
+            <p className="text-md text-black mt-2 w-full break-words line-clamp-2">{product.description}</p>                
+              <p className="text-md font-bold text-secondaryColor self-start pt-2">₱ {product.price}</p>
           </motion.div>
         ))}
       </div>

@@ -15,10 +15,10 @@ export default function Dashboard() {
   );
 
   return (
-    <div className="min-h-screen bg-[#daf1ff] flex flex-col items-center py-10 px-4">
+    <div className="min-h-screen bg-white flex flex-col items-center py-10 px-4">
       <div className="w-full max-w-2xl flex items-center mt-10 mb-6">
         {/* Dashboard Label */}
-        <span className="text-xl font-semibold text-gray-800  p-2 rounded-lg">
+        <span className="text-xl font-semibold text-gray-800 p-2 rounded-lg">
           Dashboard
         </span>
 
@@ -38,19 +38,14 @@ export default function Dashboard() {
       >
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product, index) => (
-            <Link
-              key={product.productid}
-              href={`/${encodeURIComponent(product.productid)}`}
-              passHref
-            >
+            <Link key={product.productid} href={`main/${product.productid}`} passHref>
               <motion.div
-                initial={{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                exit={{ x: -100, opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="p-4 rounded-lg bg-transparent flex flex-col items-center transition-transform duration-300 cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
+                className="p-4 rounded-lg bg-white flex flex-col items-center transition-transform duration-300 cursor-pointer shadow-lg border border-gray-200"
               >
                 <img
                   src={product.imgsrc}
@@ -60,8 +55,11 @@ export default function Dashboard() {
                 <p className="font-semibold text-center text-sm sm:text-base text-black">
                   {product.name}
                 </p>
-                <p className="text-gray-600 text-xs sm:text-sm">
-                  Price: ₱{product.price}
+                <p className="text-md text-black mt-2 w-full break-words line-clamp-2 text-left">
+                  {product.description}
+                </p>
+                <p className="text-md font-bold text-secondaryColor self-start pt-2">
+                  ₱ {product.price}
                 </p>
               </motion.div>
             </Link>
@@ -71,7 +69,7 @@ export default function Dashboard() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.1 }}
             className="text-gray-500 col-span-4 text-center"
           >
             No products found.

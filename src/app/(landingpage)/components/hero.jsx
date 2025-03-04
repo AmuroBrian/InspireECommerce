@@ -12,6 +12,7 @@ const images = [
   { src: "/images/hero6.jpg", name: "beauty", link: "#" },
   { src: "/images/hero7.jpg", name: "beauty", link: "#" },
  
+
 ];
 
 export default function Hero() {
@@ -118,7 +119,7 @@ export default function Hero() {
           </h1>
         ) : (
           <>
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center display-fit">
               {images.map((image, index) => (
                 <div
                   key={index}
@@ -126,12 +127,13 @@ export default function Hero() {
                     index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                  <Image
+                <Image
                     src={image.src}
                     alt={`Slide ${index + 1}`}
                     layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
+                    objectFit="contain"  // Use "contain" instead of "fit"
+                    objectPosition="center"  // Centers the image
+
                     priority={index === 0}
                   />
 

@@ -103,7 +103,7 @@ export default function LoginModal({ onClose }) {
           />
           <button
             type="submit"
-            className={`w-full text-white p-2 rounded flex items-center justify-center ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
+            className={`w-full text-white p-2 rounded flex items-center justify-center ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-backgroundColor"}`}
             disabled={loading}
           >
             {loading ? (
