@@ -27,13 +27,14 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <Products products={dummyProducts} /> {/* Fixed prop name */}
       <div className="bg-white w-full overflow-x-hidden ">
-     
       <AdTwo/>
       
       <JTech/>
       <Adone/>
-      <Products products={dummyProducts} /> {/* Fixed prop name */}
+     
+      
       <Footer/>
       {/* <Products2 products={dummyProducts} />  */}
       
