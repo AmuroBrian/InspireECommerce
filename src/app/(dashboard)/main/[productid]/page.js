@@ -84,7 +84,7 @@ const Page = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center bg-backgroundColor">
+        <div className="w-full h-full flex flex-col items-center bg-white">
             <div className="w-full max-w-7xl pt-[100px]">
                 <h2 className="text-2xl font-bold text-center mb-6">CHECKOUT</h2>
                 <div className="flex flex-wrap">
