@@ -13,7 +13,7 @@ export default function IBeauty() {
 
   return (
     <div className='w-full h-full bg-white text-gray-800 flex flex-col items-center pt-[100px] px-4 sm:px-6 md:px-10'>
-      <h1 className="text-3xl font-bold text-secondaryColor mb-6 tracking-wider">iBeauty</h1>
+      <h1 className="text-3xl font-bold text-black mb-6 tracking-wider">iBeauty</h1>
 
       {Object.entries(categories).map(([category, products], index) => (
         <div key={index} className="w-full max-w-screen-lg mx-auto">

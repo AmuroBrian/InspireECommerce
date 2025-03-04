@@ -84,7 +84,7 @@ export default function Settings() {
     if (loading) return <div className="text-center">Loading...</div>;
 
     return (
-        <div className="flex flex-col items-center justify-center w-full bg-backgroundColor">
+        <div className="flex flex-col items-center justify-center w-full ">
             <div className='w-full h-[80px]'></div>
             <h2 className="text-2xl font-bold mb-4">Settings</h2>
             <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
