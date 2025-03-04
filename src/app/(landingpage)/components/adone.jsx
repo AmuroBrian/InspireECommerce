@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function Card({ children, className }) {
   return (
-    <div className={`p-6 bg-transparent shadow-black shadow-lg rounded-2xl transition-all duration-500 ${className}`}>
+    <div className={`p-6 bg-white shadow-black shadow-lg rounded-2xl transition-all duration-500 ${className}`}>
       {children}
     </div>
   );

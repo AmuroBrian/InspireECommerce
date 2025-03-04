@@ -4,10 +4,12 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  { src: "/images/b1.jpeg", name: "beauty", link: "#" },
-  { src: "/images/b2.jpg", name: "beauty", link: "#" },
-  { src: "/images/t1.jpg", name: "beauty", link: "#" },
-  { src: "/images/t2.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero1.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero2.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero3.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero4.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero5.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero6.jpg", name: "beauty", link: "#" },
 ];
 
 export default function Hero() {
@@ -114,7 +116,7 @@ export default function Hero() {
           </h1>
         ) : (
           <>
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center display-fit">
               {images.map((image, index) => (
                 <div
                   key={index}
@@ -122,13 +124,15 @@ export default function Hero() {
                     index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                  <Image
+                <Image
                     src={image.src}
                     alt={`Slide ${index + 1}`}
                     layout="fill"
-                    objectFit="cover"
+                    objectFit="contain"  // Use "contain" instead of "fit"
+                    objectPosition="center"  // Centers the image
                     priority={index === 0}
                   />
+
                 </div>
               ))}
             </div>

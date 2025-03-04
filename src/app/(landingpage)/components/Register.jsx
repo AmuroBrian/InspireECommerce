@@ -174,7 +174,7 @@ export default function RegisterModal({ onClose }) {
             className={`w-full text-white p-2 rounded ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600"
+                : "bg-secondaryColor"
             }`}
             disabled={loading}
           >
