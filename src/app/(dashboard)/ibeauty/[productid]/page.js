@@ -95,7 +95,7 @@ const Page = () => {
                         </div></div>
 
                         <h3 className="mt-4 text-xl font-semibold">{product.name}</h3>
-                        <p className={`mt-2 text-lg ${product.price.includes("To be discussed") ? "text-gray-600" : "text-green-500"}`}>
+                        <p className={`mt-2 text-lg ${product.price.includes("To be discussed") ? "text-gray-600" : "text-secondaryColor"}`}>
                             {product.price.includes("To be discussed") ? product.price : `PHP ${product.price}`}
                         </p>
                         <p><strong>PRODUCT DESCRIPTION:</strong> {product.description}</p>
