@@ -156,7 +156,7 @@ export default function Settings() {
                         </button>
                     ) : (
                         <button
-                            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                            className="bg-secondaryColor text-white px-4 py-2 rounded-md"
                             onClick={() => setIsEditing(true)}
                         >
                             Edit
@@ -174,7 +174,7 @@ export default function Settings() {
 
                 {/* Change Password Section */}
                 <button
-                    className="bg-yellow-500 text-white px-4 py-2 rounded-md w-full"
+                    className="bg-secondaryColor text-white px-4 py-2 rounded-md w-full"
                     onClick={() => setChangePassword(!changePassword)}
                 >
                     {changePassword ? "Cancel Password Change" : "Change Password"}

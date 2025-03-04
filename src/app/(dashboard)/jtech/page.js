@@ -11,7 +11,7 @@ export default function JTech() {
   return (
     <div className="w-full h-full bg-white text-black flex flex-col items-center pt-[100px] px-4 sm:px-6 md:px-10">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-8 tracking-widest text-center">
-        JTech PAGE
+        JTech
       </h1>
 
       {/* Product Grid */}

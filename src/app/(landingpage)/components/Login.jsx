@@ -112,7 +112,7 @@ export default function LoginModal({ onClose }) {
                 ? "bg-gray-400 cursor-not-allowed"
                 : isFormFilled
                 ? "bg-secondaryColor"
-                : "bg-backgroundColor"
+                : "bg-secondaryColor"
             }`}
             disabled={loading}
           >
