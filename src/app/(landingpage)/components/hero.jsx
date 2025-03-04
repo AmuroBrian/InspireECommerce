@@ -10,6 +10,7 @@ const images = [
   { src: "/images/hero4.jpg", name: "beauty", link: "#" },
   { src: "/images/hero5.jpg", name: "beauty", link: "#" },
   { src: "/images/hero6.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero7.jpg", name: "beauty", link: "#" },
 ];
 
 export default function Hero() {
@@ -100,7 +101,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="bg-white w-full min-h-screen">
+    <div className="bg-white w-full min-h-screen object-cover">
       <div
         className="relative w-full h-screen flex items-center justify-center z-0 transition-all duration-500"
         style={{
@@ -124,14 +125,13 @@ export default function Hero() {
                     index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                <Image
-                    src={image.src}
-                    alt={`Slide ${index + 1}`}
-                    layout="fill"
-                    objectFit="contain"  // Use "contain" instead of "fit"
-                    objectPosition="center"  // Centers the image
-                    priority={index === 0}
-                  />
+               <Image
+  src={image.src}
+  alt={`Slide ${index + 1}`}
+  fill
+  style={{ objectFit: "contain", objectPosition: "center" }} // Recommended approach
+  priority={index === 0}
+/>
 
                 </div>
               ))}

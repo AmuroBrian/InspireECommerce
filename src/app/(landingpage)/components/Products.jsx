@@ -76,34 +76,10 @@ const Products = ({ products = [] }) => {
       {/* Blue Animated Line */}
       <motion.div className="blue-line h-1 bg-[#74abdb] w-full" initial={{ x: "100vw" }} animate={controls} />
 
-      {/* IBeauty Title with Hover Animation */}
-      {/* <div className="flex justify-center items-center mb-8">
-        <motion.span
-          className="text-5xl font-extrabold text-black"
-          whileHover={{ scale: 1.2, rotate: -10 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          ꧁
-        </motion.span>
-        <motion.h1
-          className="animated-title mx-4 text-4xl font-bold text-gray-800"
-          whileHover={{ scale: 1.1, color: "#74abdb" }}
-          transition={{ duration: 0.3 }}
-        >
-          IBeauty
-        </motion.h1>
-
-        <motion.span
-          className="text-5xl font-extrabold text-black"
-          whileHover={{ scale: 1.2, rotate: 10 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          ꧂
-        </motion.span>
-      </div> */}
 
       {/* Product Carousel */}
-<div className={`flex ${isSmallScreen ? "flex-col" : "h-[400px] overflow-hidden"} carousel-container`}>
+      <div className={`${isSmallScreen ? "grid grid-cols-2 gap-4" : "h-[400px] overflow-hidden flex"} carousel-container`}>
+
   {isSmallScreen
     ? products.map((product, index) => (
         <motion.div
@@ -115,11 +91,23 @@ const Products = ({ products = [] }) => {
           transition={{ duration: 0.5 }}
           custom={index}
         >
-          <div className="border rounded-lg mt-10 shadow-lg bg-white p-6">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="text-lg font-semibold mt-2 text-black">{product.name}</h3>
-            <p className="text-black font-medium">{product.price}</p>
-          </div>
+          <div className="border rounded-lg p-5 shadow-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+  {/* Responsive Image */}
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-md"
+  />
+
+  {/* Responsive Text */}
+  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mt-2 text-gray-900">
+    {product.name}
+  </h3>
+  <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium p-3">
+    {product.price}
+  </p>
+</div>
+
         </motion.div>
       ))
     : loopedProducts.slice(currentIndex, currentIndex + itemsPerSlide).map((product, index) => (
