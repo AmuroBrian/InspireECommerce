@@ -100,7 +100,7 @@ export default function RegisterModal({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
         <div className="relative border-b pb-2">
           <h2 className="text-xl font-semibold text-gray-800 text-center">Register</h2>

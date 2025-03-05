@@ -7,7 +7,7 @@ const images = [
   { src: "/images/hero1.jpg", name: "beauty", link: "#" },
   { src: "/images/hero2.jpg", name: "beauty", link: "#" },
   { src: "/images/hero3.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero4.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero4.jpg", name: "beauty", link: "#" },	
   { src: "/images/hero5.jpg", name: "beauty", link: "#" },
   { src: "/images/hero6.jpg", name: "beauty", link: "#" },
   { src: "/images/hero7.jpg", name: "beauty", link: "#" },
@@ -85,7 +85,7 @@ export default function Hero() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight / 1.5; // Adjust when fade should complete
+      const maxScroll = window.innerHeight / 1.5;
 
       // Calculate opacity (fade-out effect)
       const newOpacity = Math.max(0, 1 - scrollY / maxScroll);
@@ -101,17 +101,29 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="bg-white w-full min-h-screen object-cover">
+    <div className="w-full min-h-screen object-cover relative">
+      {/* Mobile Background Image */}
+      {isMobile && (
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: "url('/images/beauty.jpg')", 
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      )}
+
       <div
-        className="relative w-full h-screen flex items-center justify-center z-0 transition-all duration-500"
+        className="relative w-full h-screen flex items-center justify-center z-10 transition-all duration-500"
         style={{
-          backgroundColor: "white", // Ensures no black background
+          backgroundColor: isMobile ? "transparent" : "white",
           opacity,
           transform: `scale(${scale})`,
         }}
       >
         {isMobile ? (
-          <h1 className="text-black text-4xl font-bold">
+          <h1 className="text-white text-4xl font-bold relative z-20">
             {text}
             <span className="animate-blink">|</span>
           </h1>
@@ -125,14 +137,13 @@ export default function Hero() {
                     index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-               <Image
-  src={image.src}
-  alt={`Slide ${index + 1}`}
-  fill
-  style={{ objectFit: "contain", objectPosition: "center" }} // Recommended approach
-  priority={index === 0}
-/>
-
+                  <Image
+                    src={image.src}
+                    alt={`Slide ${index + 1}`}
+                    fill
+                    style={{ objectFit: "contain", objectPosition: "center" }}
+                    priority={index === 0}
+                  />
                 </div>
               ))}
             </div>
