@@ -76,6 +76,7 @@ export default function SidebarNavigation() {
     { name: "Transaction History", path: "/transactionhistory" },
     { name: "Shipping Status", path: "/shippingstatus" },
     { name: "Reseller Dashboard", path: "/resellerdashboard" },
+    { name: "Shipping Information", path: "/shippinginformation" },
     { name: "Settings", path: "/settings" },
     { name: "Logout", path: "/" },
   ];
@@ -102,19 +103,20 @@ export default function SidebarNavigation() {
               {isSidebarOpen ? <X /> : <Menu />}
             </button>
             <div className="flex items-center text-black text-lg font-semibold">
-            <img
-              src="/images/logoinpire.png"
-              alt="Logo"
-              className="w-50 h-10 object-contain cursor-pointer"
-              onClick={() => router.back()}
-            />
-
+              <img
+                src="/images/logoinpire.png"
+                alt="Logo"
+                className="w-50 h-10 object-contain cursor-pointer"
+                onClick={() => router.back()}
+              />
             </div>
           </div>
 
           {/* User Greeting & Profile (Hidden on Mobile) */}
           <div className="relative flex items-center gap-3">
-            {!isMobile && <span className="text-black">{`${getGreeting()}, ${userName}`}</span>}
+            {!isMobile && (
+              <span className="text-black">{`${getGreeting()}, ${userName}`}</span>
+            )}
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
               className="text-xl bg-secondaryColor p-2 bottom-0 rounded-md shadow-md text-black"
@@ -189,7 +191,9 @@ export default function SidebarNavigation() {
               </>
             ) : (
               <>
-                <p className="text-lg font-medium mb-4">Are you sure you want to logout?</p>
+                <p className="text-lg font-medium mb-4">
+                  Are you sure you want to logout?
+                </p>
                 <div className="flex justify-center gap-4">
                   <button
                     onClick={handleLogout}
