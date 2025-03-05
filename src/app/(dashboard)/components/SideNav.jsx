@@ -117,17 +117,36 @@ export default function SidebarNavigation() {
             {!isMobile && <span className="text-black">{`${getGreeting()}, ${userName}`}</span>}
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="text-xl bg-secondaryColor p-2 rounded-md shadow-md text-black"
+              className="text-xl bg-secondaryColor p-2 bottom-0 rounded-md shadow-md text-black"
             >
+             
               <User />
             </button>
             {isProfileOpen && (
-              <div className="absolute right-0 mt-24 w-48 bg-secondaryColor shadow-md rounded-md p-2">
-                <p className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white">
-                  Profile
-                </p>
-              </div>
-            )}
+                <div className=" absolute right-0 top-12 w-48 bg-secondaryColor shadow-md rounded-md p-2">
+                  {/* Settings Option */}
+                  <p 
+                    className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white"
+                    onClick={() => {
+                      setIsProfileOpen(false);
+                      router.push("/settings");
+                    }}
+                  >
+                    Settings
+                  </p>
+                  
+                  {/* Logout Option */}
+                  <p 
+                    className="p-2 hover:bg-jtechPrimaryColor hover:text-white rounded-md cursor-pointer text-white"
+                    onClick={() => {
+                      setIsProfileOpen(false);
+                      setIsLogoutModalOpen(true); // Open logout confirmation modal
+                    }}
+                  >
+                    Logout
+                  </p>
+                </div>
+              )}
           </div>
         </div>
       </nav>
