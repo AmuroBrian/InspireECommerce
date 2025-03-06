@@ -185,10 +185,10 @@ const products = [
         category: "ibeauty",
         subcategories: "ageless",
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        ingredients: "",
+        info: "Developed for Medical Use, a painless cosmetic injection needle.",
+        ingredients: "Water, BG (Butylene Glycol), Glycerin, Pentylene Glycol, Conditioned Medium of Immortalized Human Deciduous Tooth Pulp, Stem Cells, Bis-Ethoxy Diglycol Cyclohexane-1, 4-Dicarboxylate, Poly (Tripeptide-6), Placenta Extract, Hyaluronic Acid Na (Sodium Hyaluronate), 1,2-Hexanediol, Sodium Levulinate, Citric Acid, Sodium Citrate",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        imgsrc: "/images/ibeauty1.png",
+        imgsrc: "/images/dermashot.png",
         price: "7,600",
     },
     {
