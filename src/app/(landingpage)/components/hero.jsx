@@ -7,7 +7,7 @@ const images = [
   { src: "/images/hero1.jpg", name: "beauty", link: "#" },
   { src: "/images/hero2.jpg", name: "beauty", link: "#" },
   { src: "/images/hero3.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero4.jpg", name: "beauty", link: "#" },	
+  { src: "/images/hero4.jpg", name: "beauty", link: "#" },
   { src: "/images/hero5.jpg", name: "beauty", link: "#" },
   { src: "/images/hero6.jpg", name: "beauty", link: "#" },
   { src: "/images/hero7.jpg", name: "beauty", link: "#" },
@@ -86,7 +86,7 @@ export default function Hero() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const maxScroll = window.innerHeight / 1.5;
-
+      // Something
       // Calculate opacity (fade-out effect)
       const newOpacity = Math.max(0, 1 - scrollY / maxScroll);
       setOpacity(newOpacity);
@@ -107,7 +107,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: "url('/images/beauty.jpg')", 
+            backgroundImage: "url('/images/beauty.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -134,7 +134,9 @@ export default function Hero() {
                 <div
                   key={index}
                   className={`absolute w-full h-full transition-opacity duration-1000 ease-in-out ${
-                    index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    index === currentIndex
+                      ? "opacity-100 z-10"
+                      : "opacity-0 z-0"
                   }`}
                 >
                   <Image
