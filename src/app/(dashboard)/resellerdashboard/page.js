@@ -67,7 +67,7 @@ export default function ResellerDashboard() {
     };
 
     return (
-        <div className="relative w-full h-screen flex flex-col justify-center items-center text-center">
+        <div className="relative w-full h-screen flex flex-col justify-center items-center text-center z-0">
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-50"

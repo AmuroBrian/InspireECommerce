@@ -38,39 +38,34 @@ export default function JTech() {
           JTech
         </h1>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-7xl">
-          {jTechProducts.map((product, index) => (
-            <motion.div
-              key={product.productid}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
-              className="flex flex-col w-full p-4 rounded-lg shadow-lg shadow-white transition-transform duration-300 cursor-pointer bg-opacity-60"
-            >
-              <Link href={`/jtech/${product.productid}`} passHref className="w-full flex-grow">
-                <div className="w-full aspect-[4/5] overflow-hidden rounded-lg">
-                  <img
-                    src={product.imgsrc}
-                    alt={product.name}
-                    className="w-full h-auto object-cover rounded-lg"
-                  />
-                </div>
-              </Link>
-              <div className="mt-auto flex flex-col items-center">
-                <p className="text-md sm:text-lg font-semibold text-white mt-3 text-center">
-                  {product.name}
-                </p>
-              </div>
-
-              <p className="text-md text-white mt-2 w-full break-words line-clamp-2">{product.description}</p>
-              <p className="text-md font-bold text-secondaryColor self-start pt-2">{product.price}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                  {/* Product Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                      {jTechProducts.map((product, idx) => {
+                        const isFirstRow = idx < 4; // First row condition
+                        return (
+                          <motion.div
+                            key={idx}
+                            className="flex flex-col items-center w-full p-4 rounded-lg shadow-sm shadow-white transition-transform duration-300 cursor-pointer bg-opacity-80 bg-white"
+                            initial={isFirstRow ? { opacity: 1, y: -10 } : { opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false, amount: 0.2 }}
+                            transition={{ duration: 0.6, delay: idx * 0.1 }}
+                            whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+                          >
+                            <a href={`jtech/${product.productid}`} className="w-full flex-grow block">
+                              <img src={product.imgsrc} alt={product.name} className="w-full h-auto object-cover rounded-lg" />
+                            </a>
+                            <div className="mt-auto flex flex-col items-center">
+                              <p className="text-md font-semibold text-black mt-2">{product.name}</p>
+                            </div>
+                            <p className="text-md text-black mt-2 w-full break-words line-clamp-2">{product.description}</p>
+                            <p className="text-md font-bold text-secondaryColor self-start pt-2">₱{product.price}</p>
+                          </motion.div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                
 
       {/* Inline CSS Animations */}
       <style jsx>{`
