@@ -158,7 +158,7 @@ export default function SidebarNavigation() {
         initial={{ x: -250 }}
         animate={{ x: isSidebarOpen ? 0 : -250 }}
         transition={{ duration: 0.3, ease: "linear" }}
-        className="fixed top-0 left-0 h-full w-60 bg-secondaryColor text-white p-5 shadow-lg"
+        className="fixed top-0 left-0 h-full w-60 bg-secondaryColor text-white p-5 shadow-lg z-10"
       >
         <ul className="mt-16 space-y-4">
           {categories.map((category, index) => (

@@ -9,7 +9,7 @@ export default function JTech() {
   const jTechProducts = products.filter((p) => p.category === "jtech");
 
   return (
-    <div className='w-full h-full bg-white text-gray-800 flex flex-col items-center px-4 sm:px-6 md:px-10'>
+    <div className='w-full h-full bg-white text-gray-800 flex flex-col items-center px-4 sm:px-6 md:px-10 z-0'>
       {/* Animated Tech Background */}
       <div className="fixed inset-0 z-0">
         <div className="absolute w-full h-full bg-gradient-to-r from-blue-900 via-black to-black opacity-80"></div>

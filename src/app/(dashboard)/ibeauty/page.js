@@ -4,17 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import products from "@/app/data/products";
 
-// Petal Animation Variants
-const petalVariants = {
-  initial: { y: 0, x: 0, rotate: 0, opacity: 0.8 },
-  animate: {
-    y: [0, 20, -15, 10, -10, 0],
-    x: [0, -10, 10, -5, 5, 0],
-    rotate: [0, 15, -15, 10, -10, 0],
-    opacity: [0.8, 1, 0.8],
-    transition: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-  },
-};
 
 // Floating SVG Petal Component
 const Petal = ({ index }) => {
@@ -26,16 +15,17 @@ const Petal = ({ index }) => {
       viewBox="0 0 24 24"
       fill="currentColor"
       style={{
-        top: `-10%`, // Start above the screen
+        top: "-10%", // Start above the screen
         left: `${Math.random() * 100}%`, // Random horizontal position
       }}
       animate={{
-        y: ["-10%", "110%"], // Moves down the screen
-        x: ["0%", "-10%", "10%", "0%"], // Side swaying
-        rotate: [0, 15, -15, 0], // Slight rotation
+        y: ["-10%", "110%"], // Moves downwards
+        x: ["-5%", "5%", "-5%", "5%", "0%"], // Side swaying effect
+        rotate: [0, 20, -20, 10, -10, 0], // Slight rotation
+        opacity: [1, 0.9, 0.8, 0.7, 0], // Fading out at the bottom
       }}
       transition={{
-        duration: 6 + Math.random() * 3, // Random speed
+        duration: 4 + Math.random() * 2, // Random speed variation
         repeat: Infinity,
         ease: "linear",
       }}
@@ -46,7 +36,6 @@ const Petal = ({ index }) => {
 };
 
 export default function IBeauty() {
-  // Filter products into categories
   const categories = {
     Ageless: products.filter(
       (product) => product.subcategories.toLowerCase() === "ageless"
@@ -57,8 +46,8 @@ export default function IBeauty() {
   };
 
   return (
-    <div className="w-full h-full bg-white text-gray-800 flex flex-col items-center px-4 sm:px-6 md:px-10">
-      {/* Cherry Blossom Petals (SVG Animation) */}
+    <div className="w-full h-full bg-white text-gray-800 flex flex-col items-center px-4 sm:px-6 md:px-10 z-0">
+      {/* Falling Petals */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {[...Array(10)].map((_, index) => (
           <Petal key={index} index={index} />
@@ -69,14 +58,21 @@ export default function IBeauty() {
       {[...Array(5)].map((_, index) => (
         <motion.div
           key={index}
-          className="absolute w-10 text-pink-400 z-10"
+          className="absolute w-10 text-pink-400 z-50"
           style={{
             top: `${10 + index * 15}%`,
             left: `${index * 20 + 5}%`,
           }}
-          variants={petalVariants}
-          initial="initial"
-          animate="animate"
+          animate={{
+            y: ["-10%", "1610%"], // Falling animation
+            x: ["0%", "-10%", "10%", "0%"], // Slight horizontal movement
+            rotate: [0, 15, -15, 0], // Rotation effect
+          }}
+          transition={{
+            duration: 4 + Math.random() * 3,
+            repeat: Infinity,
+            ease: "linear",
+          }}
         >
           🌸
         </motion.div>
