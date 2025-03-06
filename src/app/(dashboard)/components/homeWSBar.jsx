@@ -44,29 +44,34 @@ export default function Dashboard() {
 
             return (
               <Link key={product.productid} href={`main/${product.productid}`} passHref>
-                <motion.div
-                  initial={isFirstRow ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  whileInView={isFirstRow ? {} : { opacity: 1, y: 0 }}
-                  viewport={isFirstRow ? {} : { once: false, amount: 0.2 }}
-                  transition={isFirstRow ? {} : { duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
-                  className="p-4 rounded-lg bg-white flex flex-col items-center transition-transform duration-300 cursor-pointer shadow-lg border border-gray-200"
-                >
-                  <img
-                    src={product.imgsrc}
-                    alt={product.name}
-                    className="w-35 h-35 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover mb-2 rounded-md"
-                  />
-                  <p className="font-semibold text-center text-sm sm:text-base text-black">
-                    {product.name}
-                  </p>
-                  <p className="text-md text-black mt-2 w-full break-words line-clamp-2 text-left">
-                    {product.description}
-                  </p>
-                  <p className="text-md font-bold text-secondaryColor self-start pt-2">
-                    ₱ {product.price}
-                  </p>
-                </motion.div>
+             <motion.div
+  initial={isFirstRow ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+  whileInView={isFirstRow ? {} : { opacity: 1, y: 0 }}
+  viewport={isFirstRow ? {} : { once: false, amount: 0.2 }}
+  transition={isFirstRow ? {} : { duration: 0.6, delay: index * 0.1 }}
+  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+  className="p-4 rounded-lg bg-white flex flex-col items-center transition-transform duration-300 cursor-pointer shadow-lg border border-gray-200 
+  h-[290px] sm:h-[300px] md:h-[370px] w-[160px] sm:w-[200px] md:w-[230px] text-center gap-2"
+>
+  <img
+    src={product.imgsrc}
+    alt={product.name}
+    className="w-full h-[120px] sm:h-[150px] md:h-[180px] object-cover mb-2 rounded-md"
+  />
+  <div className="flex-grow flex flex-col items-center ">
+    <p className="font-semibold text-sm sm:text-base md:text-lg text-black">
+      {product.name}
+    </p>
+    <p className="text-xs sm:text-sm md:text-md text-gray-600 mt-1 w-full break-words line-clamp-2">
+      {product.description}
+    </p>
+  </div>
+  <p className="text-sm sm:text-base md:text-lg font-bold text-secondaryColor pt-2 w-full text-left">
+    ₱ {product.price}
+  </p>
+</motion.div>
+
+
               </Link>
             );
           })

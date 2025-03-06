@@ -273,7 +273,7 @@ const products = [
         info: "By installing this device in the copper (UID) pipe of the ventilation system, power consumption can be reduced by 15% to 35%. Should be installed in the liquid pipeline between the condensation unit and the expansion valve.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/alpha-ht.png",
-        price: "To Be Discussed with a Representative of Inspire Next Global Inc.",
+        price: "To Be Discussed",
     },
     {
         productid: "Desknet",
@@ -284,7 +284,7 @@ const products = [
         info: "Offers features such as file sharing, virtual meetings, task management, approval processes, calendar integration, and internal communication.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/Desknet'sNEO.png",
-        price: "To Be Discussed with a Representative of Inspire Next Global Inc.",
+        price: "To Be Discussed ",
     },
     {
         productid: "Sqrc",
@@ -295,7 +295,7 @@ const products = [
         info: "A single code carries two types of data: public and private. Public data is accessible to anyone with a standard QR Code reader, while private data is encrypted and can only be accessed by a specialized reader equipped with a cryptographic key.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/SecurityQRCode.png",
-        price: "To Be Discussed with a Representative of Inspire Next Global Inc.",
+        price: "To Be Discussed",
     },
 ];
 
