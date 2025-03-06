@@ -6,27 +6,28 @@ const pages = [
   "A Look into the Brand's Origins: It is no secret I-Beauty was established from a love of innovation and excellence within the skincare industry ecosystem. From the onset, the brand set out to use the latest scientific breakthroughs alongside nature’s best ingredients to manufacture products that do not only work but transform patients' skin.",
   "The PUCCU Revolution: Perhaps, one of I-Beauty’s much-awaited items, PUCCU, is about to enter the personal care market. Thanks to a multi-disciplinary dedicated team of experts, PUCCU's advanced formula coupled with eco-friendly packaging epitomizes the brand's purity and sustainability ethos. The name PUCCU is derived from an old popular word that translates to 'pure and clean' affirming the brand's commitment to providing natural skincare solutions.",
   "Clinience – Bridging Science and Nature: Clinience embodies I-Beauty’s vision to integrate state-of-the-art scientific research with natural healing traditions. This research and development-driven product range is designed to meet most skincare needs including anti-aging and hydration. 'Clinience' is a term that intertwines the words 'clinical' and 'experience' which captures the brand's focus on clinical outcomes and satisfaction.",
-  "FOM Line – Formula of Miracles: The FOM product line, which includes a cream, lotion, and serum, offers a comprehensive skincare routine designed to rejuvenate and nourish the skin. Standing for 'Formula of Miracles,' the FOM series promises transformative effects, thanks to its meticulously researched, high-performance ingredients. This line is poised to become a staple in the skincare market, exemplifying I-Beauty's commitment to quality and innovation."
+  "FOM Line – Formula of Miracles: The FOM product line, which includes a cream, lotion, and serum, offers a comprehensive skincare routine designed to rejuvenate and nourish the skin. Standing for 'Formula of Miracles,' the FOM series promises transformative effects, thanks to its meticulously researched, high-performance ingredients. This line is poised to become a staple in the skincare market, exemplifying I-Beauty's commitment to quality and innovation.",
 ];
 
 export default function Adone() {
   const [pageIndex, setPageIndex] = useState(0);
-  const [mobileHeight, setMobileHeight] = useState(200);
-  const [desktopHeight, setDesktopHeight] = useState(600);
+  const [height, setHeight] = useState(600); // Default desktop height
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1024) {
-        setMobileHeight(400);
-      } else {
-        setDesktopHeight(600);
-      }
+    const updateHeight = () => {
+      setHeight(window.innerWidth < 1024 ? 400 : 600);
     };
 
-    window.addEventListener("resize", handleResize);
-    handleResize();
+    if (typeof window !== "undefined") {
+      updateHeight(); // Set initial height
+      window.addEventListener("resize", updateHeight);
+    }
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateHeight);
+      }
+    };
   }, []);
 
   const handleNextPage = () => {
@@ -46,13 +47,15 @@ export default function Adone() {
         <div className="p-6 rounded-md bg-yellow-200/50 mb-6">
           <h2 className="text-xl lg:text-2xl font-bold text-black">IFRESH</h2>
           <p className="text-sm lg:text-base text-justify text-black">
-            Our IFRESH collection brings a burst of hydration and radiance to your skin. Experience the refreshing glow with natural ingredients.
+            Our IFRESH collection brings a burst of hydration and radiance to
+            your skin. Experience the refreshing glow with natural ingredients.
           </p>
         </div>
         <div className="p-6 rounded-md bg-yellow-200/50">
           <h2 className="text-xl lg:text-2xl font-bold text-black">AGELESS</h2>
           <p className="text-sm lg:text-base text-justify text-black">
-            Our AGELESS collection brings a burst of hydration and radiance to your skin. Experience the refreshing glow with natural ingredients.
+            Our AGELESS collection brings a burst of hydration and radiance to
+            your skin. Experience the refreshing glow with natural ingredients.
           </p>
         </div>
       </div>
@@ -67,7 +70,7 @@ export default function Adone() {
               : "linear-gradient(to right, #FFC0CB, #FF69B4)",
           width: "90%",
           maxWidth: "500px",
-          height: window.innerWidth < 1024 ? `${mobileHeight}px` : `${desktopHeight}px`,
+          height: `${height}px`, // Use state for height
           objectFit: "cover",
         }}
         onClick={handleNextPage}
