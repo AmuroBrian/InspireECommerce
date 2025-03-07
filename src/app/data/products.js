@@ -45,7 +45,7 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/YBYNightMask(30pcs).png",
-        price: "730",
+        price: "760",
     },
     {
         productid: "YBYCleanGel",
@@ -57,7 +57,7 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/b2.jpg",
-        price: "404*",
+        price: "450",
     },
     {
         productid: "PuccuRed",
@@ -69,7 +69,7 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4 ",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/beyondred.png",
-        price: "635",
+        price: "725",
     },
     {
         productid: "PuccuBerry",
@@ -81,7 +81,7 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/berryflamingo.png",
-        price: "635",
+        price: "725",
     },
     {
         productid: "PuccuOrange",
@@ -93,7 +93,7 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/bloodyorange.png",
-        price: "635",
+        price: "725",
     },
     {
         productid: "PuccuPiggy",
@@ -105,7 +105,7 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4 ",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/princesspiggy.png",
-        price: "635",
+        price: "725",
     },
     {
         productid: "FomToner",
@@ -116,7 +116,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
-        imgsrc: "/images/b2.jpg",
+        imgsrc: "/images/fomlotion.png",
         price: "799",
     },
     {
@@ -128,7 +128,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
-        imgsrc: "/images/b2.jpg",
+        imgsrc: "/images/fomserum.png",
         price: "1,299",
     },
     {
@@ -140,7 +140,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        imgsrc: "/images/ibeauty1.png",
+        imgsrc: "/images/fomcream.png",
         price: "1,699",
     },
     {
@@ -177,7 +177,7 @@ const products = [
         ingredients: "NMN (beta-nicotinamide mononucleotide) / magnesium stearate, microcrystalline cellulose, HPMC, lecithin (soybean-derived), trehalose, emulsifier, coloring agent (titanium dioxide)",
         usage: "Take 4 to 8 Capsules per day with water or lukewarm water.",
         imgsrc: "/images/cliniencenmn.png",
-        price: "11,499",
+        price: "12,160",
     },
     {
         productid: "Dermashot",
@@ -200,7 +200,7 @@ const products = [
         info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         ingredients: "",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        imgsrc: "/images/ibeauty1.png",
+        imgsrc: "/images/pureexom.png",
         price: "7,125",
     },
     {
