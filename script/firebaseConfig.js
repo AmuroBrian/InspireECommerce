@@ -5,7 +5,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration object
 const firebaseConfig = {
-    apiKey: "AIzaSyD62vnksliMH1RsDnxiyZc3NN8RWh1S1FA",
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "ecommerce-ee900.firebaseapp.com",
     projectId: "ecommerce-ee900",
     storageBucket: "ecommerce-ee900.appspot.com",

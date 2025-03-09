@@ -75,7 +75,7 @@ export default function Cart() {
         };
 
         try {
-            await emailjs.send("service_hhneua7", "template_afluwi8", emailParams, "8nV8GppQ82RWajpEo");
+            await emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CART, emailParams, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
             setShowSuccessModal(true);
 
             const cartRef = collection(db, "users", user.uid, "userCart");
