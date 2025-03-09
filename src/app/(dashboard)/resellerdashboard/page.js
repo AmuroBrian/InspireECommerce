@@ -32,9 +32,9 @@ export default function ResellerDashboard() {
         setPopupMessage("Registration in Progress...");
         setShowPopup(true);
 
-        const serviceID = "service_z6qvfqz";
-        const templateID = "template_9ebkyrs";
-        const publicKey = "xlclVHCWc_GaLtZ37";
+        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_RESELLER;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
         emailjs.send(serviceID, templateID, formData, publicKey)
             .then(() => {
