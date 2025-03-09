@@ -74,8 +74,10 @@ export default function SidebarNavigation() {
     { name: "iBeauty", path: "/ibeauty" },
     { name: "J-Tech", path: "/jtech" },
     { name: "Transaction History", path: "/transactionhistory" },
+    { name: "Cart", path: "/carts" },
     { name: "Shipping Status", path: "/shippingstatus" },
     { name: "Reseller Dashboard", path: "/resellerdashboard" },
+    { name: "Shipping Information", path: "/shippinginformation" },
     { name: "Settings", path: "/settings" },
     { name: "Logout", path: "/" },
   ];
@@ -105,24 +107,45 @@ export default function SidebarNavigation() {
               <img
                 src="/images/logoinpire.png"
                 alt="Logo"
-                className="w-50 h-10 object-contain"
+                className="w-50 h-10 object-contain cursor-pointer"
+                onClick={() => router.back()}
               />
             </div>
           </div>
 
           {/* User Greeting & Profile (Hidden on Mobile) */}
           <div className="relative flex items-center gap-3">
-            {!isMobile && <span className="text-black">{`${getGreeting()}, ${userName}`}</span>}
+            {!isMobile && (
+              <span className="text-black">{`${getGreeting()}, ${userName}`}</span>
+            )}
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="text-xl bg-secondaryColor p-2 rounded-md shadow-md text-black"
+              className="text-xl bg-secondaryColor p-2 bottom-0 rounded-md shadow-md text-black"
             >
               <User />
             </button>
             {isProfileOpen && (
-              <div className="absolute right-0 mt-24 w-48 bg-secondaryColor shadow-md rounded-md p-2">
-                <p className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white">
-                  Profile
+              <div className=" absolute right-0 top-12 w-48 bg-secondaryColor shadow-md rounded-md p-2">
+                {/* Settings Option */}
+                <p
+                  className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white"
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    router.push("/settings");
+                  }}
+                >
+                  Settings
+                </p>
+
+                {/* Logout Option */}
+                <p
+                  className="p-2 hover:bg-jtechPrimaryColor hover:text-white rounded-md cursor-pointer text-white"
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    setIsLogoutModalOpen(true); // Open logout confirmation modal
+                  }}
+                >
+                  Logout
                 </p>
               </div>
             )}
@@ -135,7 +158,7 @@ export default function SidebarNavigation() {
         initial={{ x: -250 }}
         animate={{ x: isSidebarOpen ? 0 : -250 }}
         transition={{ duration: 0.3, ease: "linear" }}
-        className="fixed top-0 left-0 h-full w-60 bg-secondaryColor text-white p-5 shadow-lg"
+        className="fixed top-0 left-0 h-full w-60 bg-secondaryColor text-white p-5 shadow-lg z-10"
       >
         <ul className="mt-16 space-y-4">
           {categories.map((category, index) => (
@@ -168,7 +191,9 @@ export default function SidebarNavigation() {
               </>
             ) : (
               <>
-                <p className="text-lg font-medium mb-4">Are you sure you want to logout?</p>
+                <p className="text-lg font-medium mb-4">
+                  Are you sure you want to logout?
+                </p>
                 <div className="flex justify-center gap-4">
                   <button
                     onClick={handleLogout}

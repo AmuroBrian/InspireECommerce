@@ -85,7 +85,6 @@ export default function Settings() {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <div className='w-full h-[80px]'></div>
             <h2 className="text-2xl font-bold mb-4">Settings</h2>
             <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
 
@@ -156,7 +155,7 @@ export default function Settings() {
                         </button>
                     ) : (
                         <button
-                            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                            className="bg-secondaryColor text-white px-4 py-2 rounded-md"
                             onClick={() => setIsEditing(true)}
                         >
                             Edit
@@ -174,7 +173,7 @@ export default function Settings() {
 
                 {/* Change Password Section */}
                 <button
-                    className="bg-yellow-500 text-white px-4 py-2 rounded-md w-full"
+                    className="bg-secondaryColor text-white px-4 py-2 rounded-md w-full"
                     onClick={() => setChangePassword(!changePassword)}
                 >
                     {changePassword ? "Cancel Password Change" : "Change Password"}

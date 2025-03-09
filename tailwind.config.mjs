@@ -10,7 +10,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        backgroundColor: "#daf1ff",
+        backgroundColor: "#aec0cc",
         primaryColor: "white",
         secondaryColor: "#4DC5D6",
         ibeautyPrimaryColor: "#EE88CD",

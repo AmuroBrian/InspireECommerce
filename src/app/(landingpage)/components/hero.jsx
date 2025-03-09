@@ -4,10 +4,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  { src: "/images/b1.jpeg", name: "beauty", link: "#" },
-  { src: "/images/b2.jpg", name: "beauty", link: "#" },
-  { src: "/images/t1.jpg", name: "beauty", link: "#" },
-  { src: "/images/t2.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero1.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero2.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero3.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero4.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero5.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero6.jpg", name: "beauty", link: "#" },
+  { src: "/images/hero7.jpg", name: "beauty", link: "#" },
 ];
 
 export default function Hero() {
@@ -82,8 +85,8 @@ export default function Hero() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight / 1.5; // Adjust when fade should complete
-
+      const maxScroll = window.innerHeight / 1.5;
+      // Something
       // Calculate opacity (fade-out effect)
       const newOpacity = Math.max(0, 1 - scrollY / maxScroll);
       setOpacity(newOpacity);
@@ -98,35 +101,49 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="bg-white w-full min-h-screen">
+    <div className="w-full min-h-screen object-cover relative">
+      {/* Mobile Background Image */}
+      {isMobile && (
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: "url('/images/beauty.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      )}
+
       <div
-        className="relative w-full h-screen flex items-center justify-center z-0 transition-all duration-500"
+        className="relative w-full h-screen flex items-center justify-center z-10 transition-all duration-500"
         style={{
-          backgroundColor: "white", // Ensures no black background
+          backgroundColor: isMobile ? "transparent" : "white",
           opacity,
           transform: `scale(${scale})`,
         }}
       >
         {isMobile ? (
-          <h1 className="text-black text-4xl font-bold">
+          <h1 className="text-white text-4xl font-bold relative z-20">
             {text}
             <span className="animate-blink">|</span>
           </h1>
         ) : (
           <>
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center display-fit">
               {images.map((image, index) => (
                 <div
                   key={index}
                   className={`absolute w-full h-full transition-opacity duration-1000 ease-in-out ${
-                    index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    index === currentIndex
+                      ? "opacity-100 z-10"
+                      : "opacity-0 z-0"
                   }`}
                 >
                   <Image
                     src={image.src}
                     alt={`Slide ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "contain", objectPosition: "center" }}
                     priority={index === 0}
                   />
                 </div>

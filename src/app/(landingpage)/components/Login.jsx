@@ -6,15 +6,15 @@ import { auth } from "./../../../../script/firebaseConfig"; // Ensure this path 
 import { useRouter } from "next/navigation";
 
 export default function LoginModal({ onClose }) {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [animatedText, setAnimatedText] = useState("");
   const router = useRouter();
+
+  // Button color logic
+  const isFormFilled = formData.email.trim() !== "" && formData.password.trim() !== "";
 
   useEffect(() => {
     if (loading) {
@@ -48,7 +48,7 @@ export default function LoginModal({ onClose }) {
       }, 3000); // Show loading for 3 seconds before redirecting
     } catch (err) {
       setError(getFriendlyErrorMessage(err.code));
-      setLoading(false); // Re-enable button only if login fails
+      setLoading(false);
     }
   };
 
@@ -64,19 +64,21 @@ export default function LoginModal({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+        {/* Modal Header */}
         <div className="relative border-b pb-2">
           <h2 className="text-xl font-semibold text-gray-800 text-center">Login</h2>
           <button
             onClick={onClose}
             className="absolute right-2 top-1 text-gray-600 hover:text-gray-900 text-lg"
-            disabled={loading} // Prevent closing modal while logging in
+            disabled={loading}
           >
             ✕
           </button>
         </div>
 
+        {/* Login Form */}
         <form onSubmit={handleSubmit} className="mt-4 space-y-3 text-black">
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {success && <p className="text-green-500 text-sm">{success}</p>}
@@ -87,7 +89,7 @@ export default function LoginModal({ onClose }) {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-secondaryColor"
             required
             disabled={loading}
           />
@@ -97,13 +99,21 @@ export default function LoginModal({ onClose }) {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-secondaryColor"
             required
             disabled={loading}
           />
+
+          {/* Login Button with Dynamic Color */}
           <button
             type="submit"
-            className={`w-full text-white p-2 rounded flex items-center justify-center ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
+            className={`w-full text-white p-2 rounded flex items-center justify-center transition-colors ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : isFormFilled
+                ? "bg-secondaryColor"
+                : "bg-secondaryColor"
+            }`}
             disabled={loading}
           >
             {loading ? (
