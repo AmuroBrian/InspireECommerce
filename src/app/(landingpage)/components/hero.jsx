@@ -23,7 +23,7 @@ export default function Hero() {
   const [scale, setScale] = useState(1);
   const fullText = "Welcome to InShop";
 
-  // Check if screen size is mobile
+  // Check if screen size is mobilehh
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
