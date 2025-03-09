@@ -74,6 +74,7 @@ export default function SidebarNavigation() {
     { name: "iBeauty", path: "/ibeauty" },
     { name: "J-Tech", path: "/jtech" },
     { name: "Transaction History", path: "/transactionhistory" },
+    { name: "Cart", path: "/carts" },
     { name: "Shipping Status", path: "/shippingstatus" },
     { name: "Reseller Dashboard", path: "/resellerdashboard" },
     { name: "Shipping Information", path: "/shippinginformation" },
@@ -121,34 +122,33 @@ export default function SidebarNavigation() {
               onClick={() => setIsProfileOpen(!isProfileOpen)}
               className="text-xl bg-secondaryColor p-2 bottom-0 rounded-md shadow-md text-black"
             >
-             
               <User />
             </button>
             {isProfileOpen && (
-                <div className=" absolute right-0 top-12 w-48 bg-secondaryColor shadow-md rounded-md p-2">
-                  {/* Settings Option */}
-                  <p 
-                    className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white"
-                    onClick={() => {
-                      setIsProfileOpen(false);
-                      router.push("/settings");
-                    }}
-                  >
-                    Settings
-                  </p>
-                  
-                  {/* Logout Option */}
-                  <p 
-                    className="p-2 hover:bg-jtechPrimaryColor hover:text-white rounded-md cursor-pointer text-white"
-                    onClick={() => {
-                      setIsProfileOpen(false);
-                      setIsLogoutModalOpen(true); // Open logout confirmation modal
-                    }}
-                  >
-                    Logout
-                  </p>
-                </div>
-              )}
+              <div className=" absolute right-0 top-12 w-48 bg-secondaryColor shadow-md rounded-md p-2">
+                {/* Settings Option */}
+                <p
+                  className="p-2 hover:bg-jtechPrimaryColor hover:text-black rounded-md cursor-pointer text-white"
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    router.push("/settings");
+                  }}
+                >
+                  Settings
+                </p>
+
+                {/* Logout Option */}
+                <p
+                  className="p-2 hover:bg-jtechPrimaryColor hover:text-white rounded-md cursor-pointer text-white"
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    setIsLogoutModalOpen(true); // Open logout confirmation modal
+                  }}
+                >
+                  Logout
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </nav>

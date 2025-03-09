@@ -115,7 +115,7 @@ export default function ShippingInformation() {
     };
 
     return (
-        <div className="w-full h-full mt-[150px] mx-10 flex flex-col items-center justify-start">
+        <div className="w-full h-full mx-10 flex flex-col items-center justify-start">
             <h2 className="text-2xl font-bold mb-4 text-center">Shipping Information</h2>
             {error && <p className="text-red-500 mb-2">{error}</p>}
             <button onClick={openModal} className="bg-blue-500 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center mb-4">+</button>

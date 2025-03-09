@@ -19,25 +19,18 @@ export default function ResellerDashboard() {
 
     // Disable scrolling when popup is active
     useEffect(() => {
-        if (showPopup) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        document.body.style.overflow = showPopup ? "hidden" : "auto";
     }, [showPopup]);
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
         setPopupMessage("Registration in Progress...");
-        setShowPopup(true); // Show popup when submitting
+        setShowPopup(true);
 
         const serviceID = "service_z6qvfqz";
         const templateID = "template_9ebkyrs";
@@ -47,30 +40,29 @@ export default function ResellerDashboard() {
             .then(() => {
                 setTimeout(() => {
                     setPopupMessage("Successfully Registered!");
-
                     setTimeout(() => {
-                        setShowPopup(false); // Hide popup
-                        setPopupMessage(""); // Clear message
-                        setIsModalOpen(false); // Close modal
+                        setShowPopup(false);
+                        setPopupMessage("");
+                        setIsModalOpen(false);
                         setFormData({ firstName: '', lastName: '', address: '', contactNumber: '', email: '' });
-                    }, 3000); // Hide after 3 seconds
-                }, 2000); // Delay before showing success message
+                    }, 3000);
+                }, 2000);
             })
             .catch(() => {
                 setPopupMessage("Failed to submit. Please try again.");
                 setTimeout(() => {
                     setShowPopup(false);
                     setPopupMessage("");
-                }, 3000); // Hide error message after 3 seconds
+                }, 3000);
             })
             .finally(() => setLoading(false));
     };
 
     return (
-        <div className="relative w-full h-screen flex flex-col justify-center items-center text-center z-0">
-            {/* Background Image */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-0">
+            {/* Full-Screen Background Image */}
             <div
-                className="absolute inset-0 bg-cover bg-center opacity-50"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
                 style={{ backgroundImage: "url('images/beauty.jpg')" }}
             ></div>
 
@@ -89,7 +81,7 @@ export default function ResellerDashboard() {
 
             {/* Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-96">
                         <h2 className="text-xl font-bold text-center mb-4">Agent Information Sheet</h2>
 
