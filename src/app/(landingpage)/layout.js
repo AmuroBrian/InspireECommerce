@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "InShop",
+  description: "InShop, an Inspire ECommerce Website",
+};
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -20,9 +26,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-      
+
         {children}
-        
+
       </body>
     </html>
   );
