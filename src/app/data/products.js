@@ -116,7 +116,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
-        imgsrc: "/images/fomlotion1.png",
+        imgsrc: "/images/fomlotion.png",
         price: "799",
     },
     {
@@ -128,7 +128,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
-        imgsrc: "/images/fomserum1.png",
+        imgsrc: "/images/fomserum.png",
         price: "1299",
     },
     {
