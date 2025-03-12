@@ -79,11 +79,24 @@ export default function ResellerDashboard() {
                 </div>
             )}
 
-            {/* Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                        <h2 className="text-xl font-bold text-center mb-4">Agent Information Sheet</h2>
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 pt-6 ">
+                    <div className="bg-white p-8 rounded-lg shadow-lg w-[400px] mt-10"> 
+                        <h2 className="text-xl font-bold text-center mb-4">
+                            <div className="bg-pink-300 flex flex-col items-center p-4 rounded-md w-full h-24">
+                                {/* Center Logo */}
+                                <img
+                                    src="/images/ibeauty logo.png"
+                                    alt="I-Beauty Logo"
+                                    className="w-28 h-auto object-contain"
+                                />
+                                
+                                {/* Text Under the Logo */}
+                                <span className="text-black text-sm font-semibold mt-1">
+                                    AGENT INFORMATION SHEET
+                                </span>
+                            </div>
+                        </h2>
 
                         <form className="space-y-3">
                             <input type="text" name="firstName" placeholder="First Name" className="w-full p-2 border rounded" onChange={handleChange} value={formData.firstName} />
@@ -91,6 +104,30 @@ export default function ResellerDashboard() {
                             <input type="text" name="address" placeholder="Address" className="w-full p-2 border rounded" onChange={handleChange} value={formData.address} />
                             <input type="text" name="contactNumber" placeholder="Contact Number" className="w-full p-2 border rounded" onChange={handleChange} value={formData.contactNumber} />
                             <input type="email" name="email" placeholder="Email Address" className="w-full p-2 border rounded" onChange={handleChange} value={formData.email} />
+
+                            {/* ADDED MORE INFORMATION */}
+                            
+                            {/* GENDER */}
+                            <select 
+                            name="gender" 
+                            className="w-full p-2 border rounded" 
+                            onChange={handleChange} 
+                            value={formData.gender}
+                            >
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            </select>
+
+                            {/* AGE */}
+                            <input type="number" name="age" placeholder="Age" className="w-full p-2 border rounded" onChange={handleChange} value={formData.age} />
+
+                            {/* BIRTHDAY */}
+                            <input type="date" name="birthday" className="w-full p-2 border rounded" onChange={handleChange} value={formData.birthday} />
+
+                            {/* REFFERRED BY */}
+                            <input type="text" name="referredBy" placeholder="Referred by" className="w-full p-2 border rounded" onChange={handleChange} value={formData.referredBy} />
                         </form>
 
                         <div className="flex justify-between mt-4">
