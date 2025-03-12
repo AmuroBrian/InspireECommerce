@@ -31,12 +31,11 @@ export default function Home() {
       <Hero />
      
       <div className="bg-white w-full overflow-x-hidden ">
+      <Adone/>
+      <Products products={dummyProducts} /> {/* Fixed prop name */}
       <AdTwo/>
       
       <JTech/>
-      <Adone/>
-      <Products products={dummyProducts} /> {/* Fixed prop name */}
-      
       <Footer/>
       {/* <Products2 products={dummyProducts} />  */}
       
