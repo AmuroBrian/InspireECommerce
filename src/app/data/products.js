@@ -9,6 +9,14 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/YBYMorningMask(7pcs).png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "210",
     },
     {
@@ -21,6 +29,12 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/YBYNightMask(7pcs).png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+        ],
         price: "210",
     },
     {
@@ -33,6 +47,11 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/YBYMorningMask(30pcs).png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+        ],
         price: "730",
     },
     {
@@ -45,6 +64,14 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/YBYNightMask(30pcs).png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "760",
     },
     {
@@ -57,6 +84,14 @@ const products = [
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
         imgsrc: "/images/b2.jpg",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "450",
     },
     {
@@ -69,6 +104,14 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4 ",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/beyondred.png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "725",
     },
     {
@@ -81,6 +124,14 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/berryflamingo.png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "725",
     },
     {
@@ -93,6 +144,14 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/bloodyorange.png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "725",
     },
     {
@@ -105,6 +164,14 @@ const products = [
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4 ",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/princesspiggy.png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "725",
     },
     {
@@ -117,6 +184,14 @@ const products = [
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
         imgsrc: "/images/fomlotion.png",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
         price: "799",
     },
     {
@@ -129,7 +204,15 @@ const products = [
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
         imgsrc: "/images/fomserum.png",
-        price: "1299",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "1,299",
     },
     {
         productid: "FomCream",
@@ -141,7 +224,15 @@ const products = [
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         imgsrc: "/images/fomcream.png",
-        price: "1699",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "1,699",
     },
     {
         productid: "ClinCera",
@@ -153,7 +244,15 @@ const products = [
         ingredients: "Indigestible dextrin (made in Japan), lactose, pineapple fruit extract (containing ceramide) / lecithin (soybean derived), trehalose, flavoring, calcium stearate, silicon dioxide, cyclodextrin, emulsifier, vitamin C",
         usage: "Please take 1 to 2 sticks per day with water or lukewarm water",
         imgsrc: "/images/clinienceVitC.png",
-        price: "3499",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "3,499",
     },
     {
         productid: "ClinCyto",
@@ -165,7 +264,15 @@ const products = [
         ingredients: "",
         usage: "Take 2 to 4 capsules per day with water or lukewarm water. ",
         imgsrc: "/images/cliniencecytokines.png",
-        price: "11499",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "11,499",
     },
     {
         productid: "ClinNmn",
@@ -177,7 +284,15 @@ const products = [
         ingredients: "NMN (beta-nicotinamide mononucleotide) / magnesium stearate, microcrystalline cellulose, HPMC, lecithin (soybean-derived), trehalose, emulsifier, coloring agent (titanium dioxide)",
         usage: "Take 4 to 8 Capsules per day with water or lukewarm water.",
         imgsrc: "/images/cliniencenmn.png",
-        price: "12160",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "12,160",
     },
     {
         productid: "Dermashot",
@@ -189,7 +304,15 @@ const products = [
         ingredients: "Water, BG (Butylene Glycol), Glycerin, Pentylene Glycol, Conditioned Medium of Immortalized Human Deciduous Tooth Pulp, Stem Cells, Bis-Ethoxy Diglycol Cyclohexane-1, 4-Dicarboxylate, Poly (Tripeptide-6), Placenta Extract, Hyaluronic Acid Na (Sodium Hyaluronate), 1,2-Hexanediol, Sodium Levulinate, Citric Acid, Sodium Citrate",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         imgsrc: "/images/dermashot.png",
-        price: "7600",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "7,600",
     },
     {
         productid: "PureExom",
@@ -201,7 +324,15 @@ const products = [
         ingredients: "",
         usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         imgsrc: "/images/pureexom.png",
-        price: "7125",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "7,125",
     },
     {
         productid: "StemSaiLotion",
@@ -213,7 +344,15 @@ const products = [
         ingredients: "Gettou Leaf Extract, Red Algae Extract, Rosehip",
         usage: "After cleansing in the morning and evening, take an appropriate amount in your hands and gently apply it over your entire face. Use a hand-pressing motion to ensure even and throughout absorption.",
         imgsrc: "/images/StemSaiLotion.png",
-        price: "7125",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "7,125",
     },
     {
         productid: "StemSaiSerum",
@@ -225,7 +364,15 @@ const products = [
         ingredients: "Gettou Leaf Extract, Rosehip",
         usage: "After preparing your skin with lotion, take an amount approximately the size of a coin into your hand. Gently massage it in circular motions over your entire face. For areas of concern, apply an extra layer for enhanced results.",
         imgsrc: "/images/stemsaiserum.png",
-        price: "7125",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "7,125",
     },
 
     {
@@ -238,7 +385,15 @@ const products = [
         ingredients: "Gettou Leaf Extract, Red Algae Extract, Jojoba Oil, Argan Oil, Shea Butter",
         usage: "At the end of your skincare routine, take two pearl-sized amounts and apply to five points of your face. Gently spread it across your entire face. For areas concern, add an extra pearl-sized amount as needed. ",
         imgsrc: "/images/stemsaicream.png",
-        price: "7125",
+        imageGallery: [
+            "/images/YBYMorningMask(7pcs).png",  // Default image
+            "/images/YBYMorningMask(30pcs).png",  // Side view
+            "/images/YBYMorningMask(7pcs).png",  // Back view
+            "/images/YBYMorningMask(7pcs).png",
+            "/images/YBYNightMask(7pcs).png",
+            "/images/YBYMorningMask(7pcs).png",   // Top view
+        ],
+        price: "7,125",
     },
 
     /* {
@@ -273,6 +428,15 @@ const products = [
         info: "By installing this device in the copper (UID) pipe of the ventilation system, power consumption can be reduced by 15% to 35%. Should be installed in the liquid pipeline between the condensation unit and the expansion valve.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/alpha-ht.png",
+        imageGallery: [
+            "/images/alpha-ht.png",
+            "/images/SecurityQRCode.png",
+            "/images/alpha-ht.png",
+            "/images/alpha-ht.png",
+            "/images/alpha-ht.png",
+            "/images/Desknet'sNEO.png",
+            "/images/alpha-ht.png",
+        ],
         price: "To Be Discussed",
     },
     {
@@ -284,6 +448,10 @@ const products = [
         info: "Offers features such as file sharing, virtual meetings, task management, approval processes, calendar integration, and internal communication.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/Desknet'sNEO.png",
+        imageGallery: [
+            "/images/alpha-ht.png",
+            "/images/SecurityQRCode.png",
+        ],
         price: "To Be Discussed ",
     },
     {
@@ -295,6 +463,11 @@ const products = [
         info: "A single code carries two types of data: public and private. Public data is accessible to anyone with a standard QR Code reader, while private data is encrypted and can only be accessed by a specialized reader equipped with a cryptographic key.",
         usage: "To be discussed with a representative of Inspire Next Global Inc.",
         imgsrc: "/images/SecurityQRCode.png",
+        imageGallery: [
+            "/images/alpha-ht.png",
+            "/images/alpha-ht.png",
+            "/images/SecurityQRCode.png",
+        ],
         price: "To Be Discussed",
     },
 ];

@@ -45,15 +45,7 @@ export default function Dashboard() {
                 passHref
               >
                 <motion.div
-                  initial={
-                    isFirstRow ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                  }
-                  whileInView={isFirstRow ? {} : { opacity: 1, y: 0 }}
-                  viewport={isFirstRow ? {} : { once: false, amount: 0.2 }}
-                  transition={
-                    isFirstRow ? {} : { duration: 0.6, delay: index * 0.1 }
-                  }
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
                   className="p-4 rounded-lg bg-white flex flex-col items-center transition-transform duration-300 cursor-pointer shadow-lg border border-gray-200 
   h-[290px] sm:h-[300px] md:h-[370px] w-[160px] sm:w-[200px] md:w-[230px] text-center gap-2"
                 >
@@ -79,13 +71,9 @@ export default function Dashboard() {
           })
         ) : (
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.1 }}
-            className="text-gray-500 col-span-4 text-center"
+           
           >
-            No products found.
+           
           </motion.p>
         )}
       </div>
