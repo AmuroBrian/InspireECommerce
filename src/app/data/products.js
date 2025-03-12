@@ -212,7 +212,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "1,299",
+        price: "1299",
     },
     {
         productid: "FomCream",
@@ -232,7 +232,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "1,699",
+        price: "1699",
     },
     {
         productid: "ClinCera",
@@ -252,7 +252,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "3,499",
+        price: "3499",
     },
     {
         productid: "ClinCyto",
@@ -272,7 +272,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "11,499",
+        price: "11499",
     },
     {
         productid: "ClinNmn",
@@ -292,7 +292,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "12,160",
+        price: "12160",
     },
     {
         productid: "Dermashot",
@@ -312,7 +312,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "7,600",
+        price: "7600",
     },
     {
         productid: "PureExom",
@@ -332,7 +332,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "7,125",
+        price: "7125",
     },
     {
         productid: "StemSaiLotion",
@@ -352,7 +352,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "7,125",
+        price: "7125",
     },
     {
         productid: "StemSaiSerum",
@@ -372,7 +372,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "7,125",
+        price: "7125",
     },
 
     {
@@ -393,7 +393,7 @@ const products = [
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
-        price: "7,125",
+        price: "7125",
     },
 
     /* {
