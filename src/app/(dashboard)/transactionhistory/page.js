@@ -34,17 +34,27 @@ export default function TransactionHistory() {
 
             const transactionList = snapshot.docs.map(doc => {
                 const data = doc.data();
-                const formattedDate = data.date?.toDate ? data.date.toDate().toLocaleString() : 'N/A';
-
+            
+                let formattedDate = 'N/A';
+                if (data.date && typeof data.date === 'string') {
+                    const parsedDate = new Date(data.date);
+                    formattedDate = isNaN(parsedDate.getTime()) 
+                        ? 'N/A' 
+                        : parsedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }); 
+                    // Example Output: "March 13, 2025"
+                }
+            
                 return {
-                    id: data.id,
+                    id: data.transactionId || 'N/A',
                     Date: formattedDate,
                     Product: data.product || 'N/A',
                     Type: data.type || 'N/A',
                     Quantity: data.quantity || 0,
-                    TotalAmount: data.amount || 0
+                    TotalAmount: data.price || 0
                 };
             });
+            
+
 
             setTransactions(transactionList);
         } catch (error) {
