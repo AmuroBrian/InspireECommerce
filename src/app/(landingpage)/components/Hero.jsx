@@ -1,172 +1,224 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
-const images = [
-  { src: "/images/hero1.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero2.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero3.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero4.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero5.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero6.jpg", name: "beauty", link: "#" },
-  { src: "/images/hero7.jpg", name: "beauty", link: "#" },
+const backgrounds = [
+  "bg-[#DEB887]",
+  "bg-[#B22222]",
+  "bg-[#556B2F]",
+  "bg-[#BDB76B]",
+  "bg-blue-500"
 ];
+
+const gridSize = 6;
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [charIndex, setCharIndex] = useState(0);
-  const [opacity, setOpacity] = useState(1);
-  const [scale, setScale] = useState(1);
-  const fullText = "Welcome to InShop";
+  const [autoChange, setAutoChange] = useState(true);
+  const [animateKey, setAnimateKey] = useState(0);
 
-  // Check if screen size is mobilehh
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  // Infinite Typing Effect
-  useEffect(() => {
-    if (!isMobile) return;
-
-    let typingSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === fullText.length) {
-      setTimeout(() => setIsDeleting(true), 5000);
-      return;
-    }
-
-    if (isDeleting && charIndex === 0) {
-      setTimeout(() => setIsDeleting(false), 1000);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setText(fullText.slice(0, charIndex + (isDeleting ? -1 : 1)));
-      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, typingSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, isMobile]);
-
-  // Auto-change image every 5 seconds
-  useEffect(() => {
-    if (isMobile) return;
-
+    if (!autoChange) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
+      setAnimateKey((prevKey) => prevKey + 1);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [currentIndex, isMobile]);
+  }, [autoChange]);
 
-  // Manual navigation
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const nextBackground = () => {
+    setAutoChange(false);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
+    setAnimateKey((prevKey) => prevKey + 1);
+    setTimeout(() => setAutoChange(true), 5000);
   };
 
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+  const prevBackground = () => {
+    setAutoChange(false);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? backgrounds.length - 1 : prevIndex - 1));
+    setAnimateKey((prevKey) => prevKey + 1);
+    setTimeout(() => setAutoChange(true), 5000);
   };
-
-  // **Shrink & Fade Out on Scroll**
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight / 1.5;
-      // Something
-      // Calculate opacity (fade-out effect)
-      const newOpacity = Math.max(0, 1 - scrollY / maxScroll);
-      setOpacity(newOpacity);
-
-      // Calculate scale (shrinking effect)
-      const newScale = Math.max(0.7, 1 - scrollY / (maxScroll * 2));
-      setScale(newScale);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <div className="w-full min-h-screen object-cover relative">
-      {/* Mobile Background Image */}
-      {isMobile && (
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{
-            backgroundImage: "url('/images/beauty.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+    <div className="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 w-full h-full">
+        {[...Array(gridSize * gridSize)].map((_, i) => (
+          <motion.div
+            key={`${animateKey}-${i}`}
+            className={`w-full h-full ${backgrounds[currentIndex]}`}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: (Math.floor(i / gridSize) + (i % gridSize)) * 0.05 }}
+          />
+        ))}
+      </div>
+     
+  {/* pure exom left*/}
+  {backgrounds[currentIndex] === "bg-[#DEB887]" && (
+        <div className="absolute top-10 right-10 text-black text-right max-w-md">
+          <h2 className="text-6xl font-bold text-center">PURE EXOM</h2>
+          <p className="text-2xl font-semibold mt-2 text-center">EXOSOME POWDER</p>
+          <div className="mt-6 text-base space-y-8 text-center">
+            <div className="flex flex-col items-center">
+              <p className="font-bold text-lg">STEP 1</p>
+              <p className="text-justify w-3/4">Prepare exosome-containing human stem cell supernatant, saline, and a nebulizer for aspiration.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="font-bold text-lg">STEP 2</p>
+              <p className="text-justify w-3/4">Add a small amount of purified water (approximately 8cc) to the exosome-containing human stem cell supernatant and slowly dissolve.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="font-bold text-lg">STEP 3</p>
+              <p className="text-justify w-3/4">The solution is placed into a nebulizer and inhaled slowly through the nose for about 15 minutes.</p>
+            </div>
+          </div>
+        </div>
+      )}
+      {backgrounds[currentIndex] === "bg-[#DEB887]" && (
+        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg ">
+          <img src="/images/heroimage.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
+          <div className="text-black text-left text-sm max-w-sm">
+            <h2 className="text-4xl font-bold text-center text-white">PURE EXOM</h2>
+            {/* <p className="text-xl font-semibold text-center text-white">EXOSOME POWDER</p> */}
+            <p className="text-white mb-4">Exosome-containing adipose-derived stem cell supernatant powder | Made in Japan</p>
+            <p className="text-white">For best results, it is advisable to use with an inhaler to enhance absorption and effectiveness.</p>
+          </div>
+        </div>
       )}
 
-      <div
-        className="relative w-full h-screen flex items-center justify-center z-10 transition-all duration-500"
-        style={{
-          backgroundColor: isMobile ? "transparent" : "white",
-          opacity,
-          transform: `scale(${scale})`,
-        }}
-      >
-        {isMobile ? (
-          <h1 className="text-white text-4xl font-bold relative z-20">
-            {text}
-            <span className="animate-blink">|</span>
-          </h1>
-        ) : (
-          <>
-            <div className="relative w-full h-full flex items-center justify-center display-fit">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute w-full h-full transition-opacity duration-1000 ease-in-out ${
-                    index === currentIndex
-                      ? "opacity-100 z-10"
-                      : "opacity-0 z-0"
-                  }`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={`Slide ${index + 1}`}
-                    fill
-                    style={{ objectFit: "contain", objectPosition: "center" }}
-                    priority={index === 0}
-                  />
-                </div>
-              ))}
+
+
+   {/* puccu right */}
+      {backgrounds[currentIndex] === "bg-[#B22222]" && (
+        <div className="absolute top-10 left-12 text-white text-left max-w-md">
+          <h2 className="text-6xl font-bold text-black text-center">PUCCU</h2>
+          <p className="text-2xl font-semibold mt-2 text-black">COLOR LIPS SERUM</p>
+          <div className="mt-6 text-base space-y-4 text-left">
+            <p className="text-black"><strong>001 BEYOND RED:</strong> </p>
+            <p className="text-black">A red beyond red that will allow you to discover a new you that goes beyond your current self.</p>
+            <p className="text-black"><strong>002 BERRY FLAMINGO:</strong></p>
+            <p className="text-black"> A deep pink that exudes "dignified confidence" and is loved throughout the ages.</p>
+            <p className="text-black"><strong>003 SPARKY BLOOD ORANGE:</strong></p>
+            <p className="text-black"> A coral that has the juiciness of early summer, yet still shines brightly in reality.</p>
+            <p className="text-black"><strong>004 PRINCESS PIGGY:</strong> </p>
+            <p className="text-black">Captivating nude colors for an "irresistible charm".</p>
+          </div>
+        </div>
+      )}
+
+     {backgrounds[currentIndex] === "bg-[#B22222]" && ( 
+  <div className="absolute bottom-50 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
+    <div className="text-white text-left text-sm max-w-sm">
+      <h2 className="text-4xl font-bold text-white mt-5">PUCCU</h2>
+      {/* <p className="text-xl font-semibold text-white">EXOSOME POWDER</p> */}
+      <p className="mb-4">A true moisturizing lip serum that perfects your natural lips.</p>
+      <p>Patented encapsulated Vitamin C, Three Botanical Oils, Amino Acids-Based Plumping Ingredients.</p>
+    </div>
+    <img src="/images/heroimage2.png" alt="Puccu Color Lips Serum" className="w-96 h-96 object-contain" />
+  </div>
+      )}
+
+
+ {/* you left*/}
+       {backgrounds[currentIndex] === "bg-[#556B2F]" && (
+        <div className="absolute top-10 right-10 text-black text-right max-w-md">
+          <h2 className="text-6xl font-bold text-center mt-10">YOU</h2>
+          <div className="mt-6 text-base space-y-8 text-center">
+            <div className="flex flex-col items-center text-justify">
+            <p className="text-black mb-5"><strong>You Be You DAILY MORNING MASK</strong> </p>
+            <p className="mb-5">Provides essential moisture for morning skin, protects the skin from external stimuli,and enhances makeup application.</p>
+            <p className="text-black mb-5"><strong>You Be You DAILY NIGHT MASK</strong> </p>
+            <p className="mb-5">At night, it provides "calming" and "moisturizing" benefits to the skin after a long day, while promoting skin turnover.</p>
+            <p className="text-black mb-5"><strong>You Be You DAILY MANNAN CLEANSING GEL</strong> </p>
+            <p className="mb-5">100% plant-based mannan scrub, making it gentle and low-irritation on the skin.
+            Features the excellent adsorption power of Moroccan lava clay, providing deep cleansing to remove old dead skin cells and dirt from deep within the pores.</p>
+            
             </div>
+          </div>
+        </div>
+      )}
+      {backgrounds[currentIndex] === "bg-[#556B2F]" && (
+        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
+          <img src="/images/heroimage3.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
+          <div className="text-black text-left text-sm max-w-sm">
+            <h2 className="text-4xl font-bold text-center text-white mb-5">YOU</h2>
+            {/* <p className="text-xl font-semibold text-center text-white">EXOSOME POWDER</p> */}
+            <p className="mb-5 text-white">You Be You contains natural ingredients that makes it excellent for daily use. It has two variations which are for Daily Morning Mask and for Daily Night Mask to help achieve the effect.</p>
+            <p className="mb-5 text-white"> You Be You offers two types of packages, one contains 7 mask sheets, the other contains 30 mask sheets.</p>
+          </div>
+        </div>
+      )}
 
-            {/* Left Button */}
-            <button
-              onClick={prevImage}
-              className="absolute left-4 md:left-10 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-20 hover:bg-opacity-80 text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full transition-opacity duration-300 z-20"
-            >
-              ◀
-            </button>
 
-            {/* Right Button */}
-            <button
-              onClick={nextImage}
-              className="absolute right-4 md:right-10 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-20 hover:bg-opacity-80 text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full transition-opacity duration-300 z-20"
-            >
-              ▶
-            </button>
-          </>
-        )}
+
+      {/* clienieght right */}
+      {backgrounds[currentIndex] === "bg-blue-500" && (
+              <div className="absolute top-10 left-12 text-white text-left max-w-md">
+                <h2 className="text-6xl font-bold text-black text-center">Clinience</h2>
+                <p className="text-2xl font-semibold mt-2 text-black">Liposome vitamin c</p>
+                <div className="mt-6 text-base space-y-4 text-left">
+                  <p className="text-black">The vitamin C used at Clinience is "Quali-C®" manufactured by the British company DSM at a factory in Scotland. Quali-C® is vitamin C produced from non-genetically modified corn grown in Europe, and is recognized as a high-quality vitamin C by global standards.</p>
+                  <p className="text-black">Ingredients: Vitamin C, trehalose, lecithin (derived from soybeans), emulsifier, sweetener (stevia), flavoring, pH adjuster, sugar-transferred hesperidin</p>
+                  <p className="text-black">Shape: Powder (stick type)</p>
+                  <p className="text-black">Contents: 30 pieces (contents per piece: 2g) *Trial: 7 pieces</p>
+                  <p className="text-black">How to eat: Take 1 to 3 bottles per day with water or lukewarm water.</p> 
+                </div>
+              </div>
+            )}
+
+      {backgrounds[currentIndex] === "bg-blue-500" && ( 
+        <div className="absolute bottom-50 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
+          <div className="text-white text-left text-sm max-w-sm">
+            <h2 className="text-4xl font-bold text-white mt-5">Clinience</h2>
+            
+            <p className=" font-semibold mt-2 text-white text-left mb-5 ml-3">Contains 1,000mg of domestically produced liposomal vitamin C per packet</p>
+            {/* <p className="text-xl font-semibold text-white">EXOSOME POWDER</p> */}
+            <p className="mb-4">Vitamin C (Quali®-C) made by DSM in the UK from non-genetically modified corn is made into liposomes and 1,000mg is included in each packet.</p>
+            <p>Our unique hybrid liposomes are high-precision, high-quality domestic liposomes created in a Japanese laboratory.</p>
+          </div>
+          <img src="/images/heroimage4.png" alt="Puccu Color Lips Serum" className="w-96 h-96 object-contain" />
+        </div>
+      )}
+
+
+
+       {/* Natural Edge Series left*/}
+       {backgrounds[currentIndex] === "bg-[#BDB76B]" && (
+        <div className="absolute top-10 right-10 text-black text-right max-w-md">
+          <h2 className="text-6xl font-bold text-center mt-10">Natural Edge Series</h2>
+          <h2 className="text-2xl font-bold text-center mt-5">Unlock radiant, hydrated skin with the perfect blend of Emulsion Cream and Aqua Serum.</h2>
+          <div className="mt-6 text-base space-y-8 text-center">
+            <div className="flex flex-col items-center text-justify">
+            
+            <p className="mb-5">This moment signifies the introduction of the world's first and only cosmetics line uniquely formulated with two exceptionally rare and valuable ingredients, setting a new standard in beauty and skincare innovation.</p>
+
+            </div>
+          </div>
+        </div>
+      )}
+      {backgrounds[currentIndex] === "bg-[#BDB76B]" && (
+        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
+          <img src="/images/heroimage5.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
+          <div className="text-black text-left text-sm max-w-sm">
+            <h2 className="text-4xl font-bold text-center text-white mb-5">Natural Edge Series</h2>
+            {/* <p className="text-xl font-semibold text-center text-white">EXOSOME POWDER</p> */}
+            <p className="mb-5 text-white">Fucoxanthin, Gold, Horse umbilical cord extract, Hyaluronic Acid, Moringa Oleifera Seed Oil, Water, Horse amniotic membrane extract, Glycerin, Xanthan Gum, Lavender Oil and Pentylene Glycol.</p>
+           
+          </div>
+        </div>
+      )}
+
+
+
+
+
+      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+        <button onClick={prevBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">◀</button>
+      </div>
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
+        <button onClick={nextBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">▶</button>
       </div>
     </div>
   );

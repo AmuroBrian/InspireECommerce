@@ -11,7 +11,7 @@ const pages = [
 
 export default function Adone() {
   const [pageIndex, setPageIndex] = useState(0);
-  const [height, setHeight] = useState(600); // Default desktop height
+  const [height, setHeight] = useState(700); // Default desktop height
 
   useEffect(() => {
     const updateHeight = () => {
@@ -66,7 +66,7 @@ export default function Adone() {
         style={{
           backgroundImage:
             pageIndex === 0
-              ? "url('/images/cover.jpg')"
+              ? "url('/images/coverphoto.jpg')"
               : "linear-gradient(to right, #FFC0CB, #FF69B4)",
           width: "90%",
           maxWidth: "500px",
@@ -77,7 +77,7 @@ export default function Adone() {
       >
         {pageIndex === 0 ? (
           <h1 className="absolute bottom-4 lg:bottom-8 text-2xl lg:text-5xl font-bold text-white">
-            LEARN MORE
+          
           </h1>
         ) : (
           <h1 className="text-sm lg:text-lg font-bold p-4 text-justify">
