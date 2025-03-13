@@ -6,6 +6,7 @@ import Adone from "./components/adone";
 import AdTwo from "./components/adtwo";
 import JTech from "./components/jtech";
 import Footer from "./components/footer";
+import Logo from "./components/logo";
 
 const dummyProducts = [
   { image: "/images/YBYMorningMask(7pcs).png", name: "YBY Morning Mask (7pcs)", price: "₱ 210", description:"An extra-ordinary facial mask that provides essential moisture, protects skin from external stimuli, and has deep cleansing formula."},
@@ -36,6 +37,7 @@ export default function Home() {
       <AdTwo/>
       
       <JTech/>
+      {/* <Logo/> */}
       <Footer/>
       {/* <Products2 products={dummyProducts} />  */}
       

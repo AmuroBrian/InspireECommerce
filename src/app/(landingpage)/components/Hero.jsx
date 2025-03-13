@@ -1,22 +1,73 @@
-"use client";
+"use client"; 
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const backgrounds = [
   "bg-[#DEB887]",
-  "bg-[#B22222]",
-  "bg-[#556B2F]",
+  "bg-[#FA8072]",
+  "bg-[#8FBC8F]",
   "bg-[#BDB76B]",
-  "bg-blue-500"
+  "bg-[#87CEFA]"
 ];
 
 const gridSize = 6;
+const fullText = "Welcome to InShop" || "Default Text";
+
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoChange, setAutoChange] = useState(true);
   const [animateKey, setAnimateKey] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [text, setText] = useState("");
+  const deleteSpeed = 100;
+  const pauseTime = 2000;
+
+  const typingSpeed = 150;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+      console.log("Is Mobile:", window.innerWidth <= 640);
+    };
+  
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
+
+  useEffect(() => {
+    let i = 0;
+    let isDeleting = false;
+
+    const type = () => {
+      if (!isDeleting) {
+        setText(fullText.substring(0, i + 1));
+        i++;
+        if (i === fullText.length) {
+          isDeleting = true;
+          setTimeout(type, pauseTime); // Pause before deleting
+          return;
+        }
+      } else {
+        setText(fullText.substring(0, i - 1));
+        i--;
+        if (i === 0) {
+          isDeleting = false;
+        }
+      }
+      setTimeout(type, isDeleting ? deleteSpeed : typingSpeed);
+    };
+
+    type();
+  }, []);
+  
+  
+  
+  
 
   useEffect(() => {
     if (!autoChange) return;
@@ -40,22 +91,28 @@ export default function Hero() {
     setAnimateKey((prevKey) => prevKey + 1);
     setTimeout(() => setAutoChange(true), 5000);
   };
-
+  
   return (
     <div className="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 w-full h-full">
-        {[...Array(gridSize * gridSize)].map((_, i) => (
-          <motion.div
-            key={`${animateKey}-${i}`}
-            className={`w-full h-full ${backgrounds[currentIndex]}`}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: (Math.floor(i / gridSize) + (i % gridSize)) * 0.05 }}
-          />
-        ))}
-      </div>
-     
-  {/* pure exom left*/}
+       {!isMobile && (
+  <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 w-full h-full">
+
+
+    {[...Array(gridSize * gridSize)].map((_, i) => (
+      <motion.div
+        key={`${animateKey}-${i}`}
+        className={`w-full h-full ${backgrounds[currentIndex]}`}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1,
+          delay: (Math.floor(i / gridSize) + (i % gridSize)) * 0.05,
+        }}
+      />
+    ))}
+
+
+    {/* pure exom left*/}
   {backgrounds[currentIndex] === "bg-[#DEB887]" && (
         <div className="absolute top-10 right-10 text-black text-right max-w-md">
           <h2 className="text-6xl font-bold text-center">PURE EXOM</h2>
@@ -77,7 +134,7 @@ export default function Hero() {
         </div>
       )}
       {backgrounds[currentIndex] === "bg-[#DEB887]" && (
-        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg ">
+        <div className="absolute mt-20 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg ">
           <img src="/images/heroimage.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
           <div className="text-black text-left text-sm max-w-sm">
             <h2 className="text-4xl font-bold text-center text-white">PURE EXOM</h2>
@@ -91,7 +148,7 @@ export default function Hero() {
 
 
    {/* puccu right */}
-      {backgrounds[currentIndex] === "bg-[#B22222]" && (
+      {backgrounds[currentIndex] === "bg-[#FA8072]" && (
         <div className="absolute top-10 left-12 text-white text-left max-w-md">
           <h2 className="text-6xl font-bold text-black text-center">PUCCU</h2>
           <p className="text-2xl font-semibold mt-2 text-black">COLOR LIPS SERUM</p>
@@ -108,8 +165,8 @@ export default function Hero() {
         </div>
       )}
 
-     {backgrounds[currentIndex] === "bg-[#B22222]" && ( 
-  <div className="absolute bottom-50 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
+     {backgrounds[currentIndex] === "bg-[#FA8072]" && ( 
+  <div className="absolute mt-20 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
     <div className="text-white text-left text-sm max-w-sm">
       <h2 className="text-4xl font-bold text-white mt-5">PUCCU</h2>
       {/* <p className="text-xl font-semibold text-white">EXOSOME POWDER</p> */}
@@ -122,7 +179,7 @@ export default function Hero() {
 
 
  {/* you left*/}
-       {backgrounds[currentIndex] === "bg-[#556B2F]" && (
+       {backgrounds[currentIndex] === "bg-[#8FBC8F]" && (
         <div className="absolute top-10 right-10 text-black text-right max-w-md">
           <h2 className="text-6xl font-bold text-center mt-10">YOU</h2>
           <div className="mt-6 text-base space-y-8 text-center">
@@ -139,8 +196,8 @@ export default function Hero() {
           </div>
         </div>
       )}
-      {backgrounds[currentIndex] === "bg-[#556B2F]" && (
-        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
+      {backgrounds[currentIndex] === "bg-[#8FBC8F]" && (
+        <div className="absolute mt-20 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
           <img src="/images/heroimage3.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
           <div className="text-black text-left text-sm max-w-sm">
             <h2 className="text-4xl font-bold text-center text-white mb-5">YOU</h2>
@@ -154,7 +211,7 @@ export default function Hero() {
 
 
       {/* clienieght right */}
-      {backgrounds[currentIndex] === "bg-blue-500" && (
+      {backgrounds[currentIndex] === "bg-[#87CEFA]" && (
               <div className="absolute top-10 left-12 text-white text-left max-w-md">
                 <h2 className="text-6xl font-bold text-black text-center">Clinience</h2>
                 <p className="text-2xl font-semibold mt-2 text-black">Liposome vitamin c</p>
@@ -168,12 +225,12 @@ export default function Hero() {
               </div>
             )}
 
-      {backgrounds[currentIndex] === "bg-blue-500" && ( 
-        <div className="absolute bottom-50 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
+      {backgrounds[currentIndex] === "bg-[#87CEFA]" && ( 
+        <div className="absolute mt-20 right-10 flex items-center gap-6 p-4 bg-black bg-opacity-50 rounded-lg shadow-lg">
           <div className="text-white text-left text-sm max-w-sm">
             <h2 className="text-4xl font-bold text-white mt-5">Clinience</h2>
             
-            <p className=" font-semibold mt-2 text-white text-left mb-5 ml-3">Contains 1,000mg of domestically produced liposomal vitamin C per packet</p>
+            <p className=" font-semibold mt-2 text-white text-left mb-5">Contains 1,000mg of domestically produced liposomal vitamin C per packet</p>
             {/* <p className="text-xl font-semibold text-white">EXOSOME POWDER</p> */}
             <p className="mb-4">Vitamin C (Quali®-C) made by DSM in the UK from non-genetically modified corn is made into liposomes and 1,000mg is included in each packet.</p>
             <p>Our unique hybrid liposomes are high-precision, high-quality domestic liposomes created in a Japanese laboratory.</p>
@@ -199,7 +256,7 @@ export default function Hero() {
         </div>
       )}
       {backgrounds[currentIndex] === "bg-[#BDB76B]" && (
-        <div className="absolute bottom-50 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
+        <div className="absolute mt-20 left-10 flex items-center gap-6 p-6 bg-black bg-opacity-50 rounded-lg shadow-lg">
           <img src="/images/heroimage5.png" alt="Exosome Powder" className="w-96 h-96 object-contain" />
           <div className="text-black text-left text-sm max-w-sm">
             <h2 className="text-4xl font-bold text-center text-white mb-5">Natural Edge Series</h2>
@@ -211,15 +268,43 @@ export default function Hero() {
       )}
 
 
-
-
-
       <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-        <button onClick={prevBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">◀</button>
-      </div>
-      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
-        <button onClick={nextBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">▶</button>
-      </div>
+              <button onClick={prevBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">◀</button>
+            </div>
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
+              <button onClick={nextBackground} className="bg-white text-black bg-opacity-10 px-4 py-2 rounded-md shadow-md">▶</button>
+            </div>
+
+        </div>
+
+        
+      )}
+
+{isMobile && (
+  <div 
+    className="absolute w-full h-full bg-cover bg-center flex items-center justify-center"
+    style={{ backgroundImage: "url('/images/heromobile1.jpg')" }} // Background image
+  >
+    <span 
+      className="text-black text-3xl font-bold whitespace-nowrap"
+      style={{
+        position: "absolute", // Keeps text in place
+        top: "30%", // Positions text lower, adjust as needed
+        left: "50%",
+        transform: "translateX(-50%)", // Center the text horizontally
+        
+        padding: "5px 15px", // Adds spacing around text
+        borderRadius: "5px" // Smooth corners
+      }}
+    >
+      {text}
+    </span>
+  </div>
+)}
+
+
+
+     
     </div>
   );
 }
