@@ -105,10 +105,10 @@ const products = [
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/beyondred.png",
         imageGallery: [
-            "/images/YBYMorningMask(7pcs).png",  // Default image
-            "/images/YBYMorningMask(30pcs).png",  // Side view
-            "/images/YBYMorningMask(7pcs).png",  // Back view
-            "/images/YBYMorningMask(7pcs).png",
+            "/images/beyond red 1.png",  // Default image
+            "/images/beyond red 2.png",  // Side view
+            "/images/beyond red 3.png",  // Back view
+            "/images/beyond red 4.png",
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
@@ -119,16 +119,16 @@ const products = [
         name: "PUCCU Berry Flamingo",
         category: "ibeauty",
         subcategories: "ifresh",
-        description: "A deep pink that exudes\"dignified confidence\" and is loved throughout the ages.",
+        description: "A deep pink that will always be loved and exudes dignity and confidence.",
         info: "PUCCÚ is a color lip serum with a true plump formula that focuses on inner dryness of the lips and aims to truly moisturize from the inside, not just the surface. We want everyone who uses this color lip serum to be filled with inner confidence and a radiance that cannot be hidden. A true moisturizing lip serum that perfects your natural lips.",
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/berryflamingo.png",
         imageGallery: [
-            "/images/YBYMorningMask(7pcs).png",  // Default image
-            "/images/YBYMorningMask(30pcs).png",  // Side view
-            "/images/YBYMorningMask(7pcs).png",  // Back view
-            "/images/YBYMorningMask(7pcs).png",
+            "/images/berry flamingo 1.png",  // Default image
+            "/images/berry flamingo 2.png",  // Side view
+            "/images/berry flamingo 3.png",  // Back view
+            "/images/berry flamingo 4.png",
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
@@ -139,16 +139,16 @@ const products = [
         name: "PUCCU Sparky Blood Orange",
         category: "ibeauty",
         subcategories: "ifresh",
-        description: "A coral that has the juiciness of early summer, yet still shines brightly in reality.",
+        description: "A coral that has the juiciness of early summer, yet shines with a real, undimmed glow.",
         info: "PUCCÚ is a color lip serum with a true plump formula that focuses on inner dryness of the lips and aims to truly moisturize from the inside, not just the surface. We want everyone who uses this color lip serum to be filled with inner confidence and a radiance that cannot be hidden. A true moisturizing lip serum that perfects your natural lips.",
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/bloodyorange.png",
         imageGallery: [
-            "/images/YBYMorningMask(7pcs).png",  // Default image
-            "/images/YBYMorningMask(30pcs).png",  // Side view
-            "/images/YBYMorningMask(7pcs).png",  // Back view
-            "/images/YBYMorningMask(7pcs).png",
+            "/images/sparky blood 1.png",  // Default image
+            "/images/sparky blood 2.png",  // Side view
+            "/images/sparky blood 3.png",  // Back view
+            "/images/sparky blood 4.png",
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
@@ -159,16 +159,16 @@ const products = [
         name: "PUCCU Princess Piggy",
         category: "ibeauty",
         subcategories: "ifresh",
-        description: "Captivating nude colors for an \"irresistible charm\".",
+        description: "The captivating nude color will draw attention on the street, just like Twiggy in the cinema.",
         info: "PUCCÚ is a color lip serum with a true plump formula that focuses on inner dryness of the lips and aims to truly moisturize from the inside, not just the surface. We want everyone who uses this color lip serum to be filled with inner confidence and a radiance that cannot be hidden. A true moisturizing lip serum that perfects your natural lips.",
         ingredients: "Hydrogenated polyisobutene, squalane, pentaerythrityl tetraisostearate, paraffin, microcrystalline wax, dipalmitoyl hydroxyproline, olive fruit oil, jojoba seed oil, opuntia ficus-indica seed oil, polyquaternium-61, isostearic acid, volcanic soil, ascorbic acid, amylopectin, hyaluronic acid, 1,2-hexanediol, ethylhexylglycerin, water, tocopherol, BHT, propylparaben, (+/-) mica, triethylhexanoin, polyglyceryl-2 triisostearate, titanium dioxide, aluminum hydroxide, barium sulfate, red 202, red 201, red 104 (1), blue 204, yellow 4 ",
         usage: "Before applying, lightly mix with the applicator tip. Apply an appropriate amount to your lips and spread from the center to the corners of your mouth. Applying multiple layers to the center of your lips will give your lips a more voluminous look. \nIf you use it during a meal, wipe your lips with tissue paper or similar to clean them before use. \nAfter use, wipe the tip with tissue paper or similar and put it back in place. \nWipe the mouth of the container clean and then close the cap properly. ",
         imgsrc: "/images/princesspiggy.png",
         imageGallery: [
-            "/images/YBYMorningMask(7pcs).png",  // Default image
-            "/images/YBYMorningMask(30pcs).png",  // Side view
-            "/images/YBYMorningMask(7pcs).png",  // Back view
-            "/images/YBYMorningMask(7pcs).png",
+            "/images/princess piggy 1.png",  // Default image
+            "/images/princess piggy 2.png",  // Side view
+            "/images/princess piggy 3.png",  // Back view
+            "/images/princess piggy 4.png",
             "/images/YBYNightMask(7pcs).png",
             "/images/YBYMorningMask(7pcs).png",   // Top view
         ],
@@ -203,7 +203,7 @@ const products = [
         info: "Groundbreaking skincare innovation further enhances and delivers deep hydration, nourishment, and protection for radiant, healthy-looking skin.",
         ingredients: "Water, Mineral Oil, Glycerin, BG, Wasabi Seed Oil, Behenyl Alcohol,Patyl Alcohol, Stearic Acid, Beeswax, Tri (Caprylic Acid/Capric Acid) Glyceril, Dimethicone, Cetyl Palmitate, Glyceryl Caprylate, Ethyheylglycerin, Phenoxyethanol, Fucoxanthin, Okinawa Mozuku Extract, Umbilical Cord Extract, Hydrolyzed Equine Amniotic Membrane Extract, Sodium Hyaluronate, Hydrolyzed Alkyl (C12-13) Glyceryl Hyaluronate, Hydrolyzed Hyaluronic Acid, Methyl Carboxymethyl Phenyl Amino Carboxy Propylphosphonate, Trisodium Ascorbyl Palmitate Phosphate, Centella Asiatica Extract, Licorice Root Extract, Rosemary Leaf Extract, Chamomile Flower Extract, Scutellaria Root Extract, Japanese Knotweed Root Extract, Peanut Seed Coat Extract, Propolis Extract, Pentylene Glycol, Ethanol, Lemongrass Oil, Lavender Oil, Xanthan Gum, Lecithin, Carbomer, Arginine, Tocopherol.",
         usage: "lorem ipsum",
-        imgsrc: "/images/fomserum.png",
+        imgsrc: "/images/fom serum.png",
         imageGallery: [
             "/images/YBYMorningMask(7pcs).png",  // Default image
             "/images/YBYMorningMask(30pcs).png",  // Side view
