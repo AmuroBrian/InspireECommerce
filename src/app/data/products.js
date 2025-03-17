@@ -83,7 +83,7 @@ const products = [
         info: "100% plant-based mannan scrub, making it gentle and low-irritation on the skin.",
         ingredients: "Lyocell, Folitec, Green satsuma, 13-0-Ethyl ascorbic acid (skin conditioning ingredient), Houttuynia cordata extract, Apple fruit culture cell extract, Microsospora foliata polysaccharide, Unshu mandarin fruit extract.",
         usage: "Apply a small amount of the product to the face and massage gently. Rinse with water.",
-        imgsrc: "/images/b2.jpg",
+        imgsrc: "/images/yby cleansing 1.png",
         imageGallery: [
             "/images/YBYMorningMask(7pcs).png",  // Default image
             "/images/YBYMorningMask(30pcs).png",  // Side view
@@ -299,18 +299,18 @@ const products = [
         name: "Dermashot",
         category: "ibeauty",
         subcategories: "ageless",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        info: "Developed for Medical Use, a painless cosmetic injection needle.",
+        description: "A high-tech beauty serum with painless hollow microneedle technology that deeply penetrates the skin, delivering intense hydration, regeneration, and anti-aging benefits.",
+        info: "Formulated with Cysay Factor, a powerful stem cell culture supernatant, Dermashot Serum enhances skin elasticity, promotes cell renewal, and improves overall skin health. Its medical-grade formula ensures deep absorption for maximum effectiveness.",
         ingredients: "Water, BG (Butylene Glycol), Glycerin, Pentylene Glycol, Conditioned Medium of Immortalized Human Deciduous Tooth Pulp, Stem Cells, Bis-Ethoxy Diglycol Cyclohexane-1, 4-Dicarboxylate, Poly (Tripeptide-6), Placenta Extract, Hyaluronic Acid Na (Sodium Hyaluronate), 1,2-Hexanediol, Sodium Levulinate, Citric Acid, Sodium Citrate",
-        usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        imgsrc: "/images/dermashot.png",
+        usage: "Apply the serum evenly on clean skin, allowing the microneedle technology to enhance absorption. No rinsing required.",
+        imgsrc: "/images/dermashot serum.png",
         imageGallery: [
-            "/images/YBYMorningMask(7pcs).png",  // Default image
-            "/images/YBYMorningMask(30pcs).png",  // Side view
-            "/images/YBYMorningMask(7pcs).png",  // Back view
-            "/images/YBYMorningMask(7pcs).png",
-            "/images/YBYNightMask(7pcs).png",
-            "/images/YBYMorningMask(7pcs).png",   // Top view
+            "/images/dermashot 1.png",  // Default image
+            "/images/dermashot 2.png",  // Front view
+            "/images/dermashot blk.png",  // Back view
+            "/images/dermashot 3.png",
+            "/images/dermashot 4.png",
+            "/images/dermashot 5.png",   // 
         ],
         price: "7600",
     },
@@ -319,10 +319,10 @@ const products = [
         name: "Pure Exom",
         category: "ibeauty",
         subcategories: "ageless",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        description: "A premium exosome powder derived from adipose stem cells, designed to enhance skin regeneration and cellular repair for a youthful, glowing complexion.", 
+        info: "Made in Japan, Pure Exom contains exosome-containing human stem cell supernatant powder that promotes deep skin renewal. For best results, it is recommended to use with an inhaler to enhance absorption and effectiveness.",
         ingredients: "",
-        usage: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        usage: "Mix with purified water and dissolve completely. Use with a nebulizer and inhale slowly through the nose for about 15 minutes.",
         imgsrc: "/images/pureexom.png",
         imageGallery: [
             "/images/YBYMorningMask(7pcs).png",  // Default image
